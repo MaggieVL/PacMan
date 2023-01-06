@@ -1,5 +1,7 @@
 # 6 January 2023
 
+15:00 CET ml et dahoum
+
 * 1st day of the project `done`
 * Article https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
 * Mantra
