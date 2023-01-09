@@ -11,3 +11,6 @@
   * Show the sprite sheet w/ HTML `ml`
   * Place one PacMan on top of the labyrinth w/ CSS `ml`
   * Try to move the PacMan around `ml`
+* Done
+  * tried multiple ways of displaying other images from the sprite sheet, but all of them appeared as blank icons - tried finding out why but it was not successful, finally ran an example that does it successfully and hope I can do it tomorrow the right way
+  * found some useful videos on sprite animations for the 'move PacMan part'
