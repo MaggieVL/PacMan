@@ -1,5 +1,654 @@
-#full-labyrinth{
-    width: 226px;
-    height: 249px;
-    background: url(./static/arcade-pac-man-general-sprites.png) 0 0;
+#full-labyrinth { 
+    width: 227px;
+    height: 251px;
+    background: url('./static/arcade-pac-man-general-sprites.png') 0 0;
+}
+
+#empty-labyrinth {
+    width: 230px;
+    height: 251px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -225px 0;
+}
+
+#small-pacman-turned-right-mouth-wide-open {
+    width: 12px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -456px 0;
+}
+
+#small-pacman-turned-right-mouth-slightly-open {
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -472px 0;
+}
+
+#small-pacman-full-circle {
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -488px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-first {
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -504px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-second {
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -519px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-third {
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -535px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-fourth {
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-fifth {
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -567px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-sixth {
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-seventh {
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -600px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-eighth {
+    width: 11px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -618px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-ninth {
+    width: 7px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -636px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-tenth {
+    width: 7px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -652px 0;
+}
+
+#small-pacman-exploading-turned-upside-down-mouth-open-eleventh {
+    width: 13px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -665px -2px;
+}
+
+
+
+
+
+
+
+
+
+#small-pacman-turned-left-mouth-wide-open { 
+    width: 16px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -456px -16px;
+}
+
+#small-pacman-turned-left-mouth-slightly-open { 
+    width: 16px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -472px -16px;
+}
+
+#small-pacman-turned-upside-down-mouth-wide-open { 
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -33px;
+}
+
+#small-pacman-turned-upside-down-mouth-slightly-open { 
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -32px;
+}
+
+#small-pacman-turned-upright-mouth-wide-open { 
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -47px;
+}
+
+#small-pacman-turned-upright-mouth-slightly-open { 
+    width: 17px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -47px;
+}
+
+#big-pacman-turned-right-mouth-wide-open { 
+    width: 34px;
+    height: 36px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -486px -14px;
+}
+
+#big-pacman-turned-right-mouth-slightly-open { 
+    width: 34px;
+    height: 36px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -518px -14px;
+}
+
+#big-pacman-full-circle { 
+    width: 34px;
+    height: 36px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px -14px;
+}
+
+#smallest-pacman-turned-left { 
+    width: 14px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -585px -15px;
+}
+
+#cherry { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -488px -48px;
+}
+
+#strawberry { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -504px -48px;
+}
+
+#orange { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -520px -48px;;
+}
+
+#red-apple { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -536px -48px;
+}
+
+#lime { 
+    width: 15px;
+    height: 16px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -553px -48px;
+}
+
+#wand-like-object { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -568px -48px;
+}
+
+#bell { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -584px -49px;
+}
+
+#key { 
+    width: 15px;
+    height: 15px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -600px -49px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#red-monster-looking-to-the-right-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -64px;
+}
+
+#red-monster-looking-to-the-right-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -64px;
+}
+
+#red-monster-looking-to-the-left-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -64px;
+}
+
+#red-monster-looking-to-the-left-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -503px -64px;
+}
+
+#red-monster-looking-up-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -519px -64px;
+}
+
+#red-monster-looking-up-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -535px -64px;
+}
+
+#red-monster-looking-down-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px -64px;
+}
+
+#red-monster-looking-down-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -567px -64px;
+}
+
+#blue-monster-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -64px;
+}
+
+#blue-monster-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -599px -64px;
+}
+
+#white-monster-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -615px -64px;
+}
+
+#white-monster-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -631px -64px;
+}
+
+#pink-monster-looking-to-the-right-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -80px;
+}
+
+#pink-monster-looking-to-the-right-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -80px;
+}
+
+#pink-monster-looking-to-the-left-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -80px;
+}
+
+#pink-monster-looking-to-the-left-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -503px -80px;
+}
+
+#pink-monster-looking-up-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -519px -80px;
+}
+
+#pink-monster-looking-up-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -535px -80px;
+}
+
+#pink-monster-looking-down-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px -80px;
+}
+
+#pink-monster-looking-down-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -567px -80px;
+}
+
+#disappearing-monster-looking-right { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -80px;
+}
+
+#disappearing-monster-looking-left { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -599px -80px;
+}
+
+#disappearing-monster-looking-up { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -615px -80px;
+}
+
+#disappearing-monster-looking-down { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -631px -80px;
+}
+
+#cyan-monster-looking-to-the-right-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -96px;
+}
+
+#cyan-monster-looking-to-the-right-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -96px;
+}
+
+#cyan-monster-looking-to-the-left-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -96px;
+}
+
+#cyan-monster-looking-to-the-left-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -503px -96px;
+}
+
+#cyan-monster-looking-up-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -519px -96px;
+}
+
+#cyan-monster-looking-up-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -535px -96px;
+}
+
+#cyan-monster-looking-down-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px -96px;
+}
+
+#cyan-monster-looking-down-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -567px -96px;
+}
+
+#red-splash1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -584px -96px;
+}
+
+#red-splash2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -600px -96px;
+}
+
+#red-splash3 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -616px -96px;
+}
+
+#red-splash4 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -632px -96px;
+}
+
+#red-splash5 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -648px -96px;
+}
+
+#orange-monster-looking-to-the-right-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -112px;
+}
+
+#orange-monster-looking-to-the-right-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -112px;
+}
+
+#orange-monster-looking-to-the-left-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -112px;
+}
+
+#orange-monster-looking-to-the-left-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -503px -112px;
+}
+
+#orange-monster-looking-up-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -519px -112px;
+}
+
+#orange-monster-looking-up-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -535px -112px;
+}
+
+#orange-monster-looking-down-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -551px -112px;
+}
+
+#orange-monster-looking-down-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -567px -112px;
+}
+
+#red-monster-bruised-looking-up { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -112px;
+}
+
+#red-monster-bruised-looking-right { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -599px -112px;
+}
+
+#red-monster-bruised-looking-left-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -615px -112px;
+}
+
+#red-monster-bruised-looking-left-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -631px -112px;
+}
+
+#points-100 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -128px;
+}
+
+#points-200 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -128px;
+}
+
+#points-300 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -128px;
+}
+
+#points-400 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -505px -128px;
+}
+
+#points-500 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -455px -143px;
+}
+
+#points-600 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -471px -143px;
+}
+
+#points-700 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -487px -143px;
+}
+
+#points-1000 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -503px -143px;
+}
+
+#points-2000 { 
+    width: 22px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -517px -159px;
+}
+
+#points-3000 { 
+    width: 22px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -517px -175px;
+}
+
+#points-5000 { 
+    width: 22px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -517px -191px;
+}
+
+#snail-like-creature-1 { 
+    width: 34px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -128px;
+}
+
+#snail-like-creature-2 { 
+    width: 34px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -617px -128px;
+}
+
+#snail-like-creature-3 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -145px;
+}
+
+#snail-like-creature-4 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -599px -145px;
+}
+
+#snail-like-creature-5 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -615px -145px;
+}
+
+#snail-like-creature-6 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -631px -145px;
+}
+
+#unused {
+    width: 51px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -582px -159px;
+}
+
+#explosion-white-pink-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -176px;
+}
+
+#explosion-white-pink-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -583px -192px;
+}
+
+#explosion-yellow-blue-1 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -600px -176px;
+}
+
+#explosion-yellow-blue-2 { 
+    width: 17px;
+    height: 17px;
+    background: url(./static/arcade-pac-man-general-sprites.png) -600px -192px;
 }

@@ -11,3 +11,6 @@
   * Show the sprite sheet w/ HTML `ml`
   * Place one PacMan on top of the labyrinth w/ CSS `ml`
   * Try to move the PacMan around `ml`
+* Done
+  * showed all sprite icons w/ CSS (in Safari they show okay, in Chrome there is a 'broken image' icon on them that needs to be removed) (realised later on that (maybe all) the icons placed in the labyrinth paths (moving or not) should probably be the same size or sth => more adjustments later if needed)
+  * watched videos and read blogposts on animations in order to move the icons
