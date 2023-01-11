@@ -1,4 +1,7 @@
 #full-labyrinth { 
+    position: relative;
+    top: 0px;
+    left: 0px;
     width: 227px;
     height: 251px;
     background: url('./static/arcade-pac-man-general-sprites.png') 0 0;
@@ -17,8 +20,11 @@
 }
 
 #small-pacman-turned-right-mouth-slightly-open {
+    position: absolute;
     width: 15px;
     height: 15px;
+    top: 15px;
+    left: 30px;
     background: url(./static/arcade-pac-man-general-sprites.png) -472px 0;
 }
 
@@ -651,4 +657,10 @@
     width: 17px;
     height: 17px;
     background: url(./static/arcade-pac-man-general-sprites.png) -600px -192px;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
 }

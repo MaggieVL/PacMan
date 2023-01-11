@@ -10,3 +10,11 @@
 * Homework
   * Place one PacMan on top of the labyrinth w/ CSS `ml`
   * Try to move the PacMan around `ml`
+* Done
+  * watched tutorials on sprite sheet animations for game develeopment with vanilla js, and css animations 
+  * placed pacman on top of the board and started researching on the ways i can move it so i can choose the most appropriate one
+* Side note: useful videos found (and interesting stuff briefly checked) 
+    * https://www.youtube.com/watch?v=GFO_txvwK_c&ab_channel=freeCodeCamp.org
+    * https://www.w3schools.com/howto/howto_css_parallax.asp
+    * https://www.youtube.com/watch?v=GVuU25pGaYo&ab_channel=Frankslaboratory
+    * https://www.youtube.com/watch?v=CY0HE277IBM&t=39s&ab_channel=Frankslaboratory
