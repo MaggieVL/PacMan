@@ -9,3 +9,5 @@
   * Make small steps. Sometimes you will be overwhelmed by the possibilities. Do not get lost. Make small steps.
 * Homework
   * Try to move the PacMan around `ml`
+* Done
+  * made PacMan move in the main directions using the keyboard

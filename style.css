@@ -29,6 +29,9 @@
 }
 
 #small-pacman-full-circle {
+    position: absolute;
+    top: 15px;
+    left: 30px;
     width: 15px;
     height: 15px;
     background: url(./static/arcade-pac-man-general-sprites.png) -488px 0;
