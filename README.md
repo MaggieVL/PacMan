@@ -47,3 +47,5 @@
   * make PacMan move straight ahead until reaching a wall (locate the walls)
   * animate PacMan (only small moving PacMan for now, the other one is to be animated when it has been eaten)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
+* Done
+  * watched some videos on collision detection (between rectangles), animations (for pacman, but mainly to check if my idea for the coins disappearing is okay) and researched keyboard events for movement and so on, so i now feel prepared to implement them tomorrow
