@@ -47,3 +47,6 @@
   * make PacMan move straight ahead until reaching a wall (locate the walls)
   * animate PacMan (only small moving PacMan for now, the other one is to be animated when it has been eaten)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
+* Done
+  * started using canvas
+  * started working on pacman animation and movement
