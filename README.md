@@ -1,4 +1,4 @@
-# 24th January 2023
+# 26th January 2023
 
 * 10th day of the project
 * Article https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
@@ -47,3 +47,6 @@
   * make PacMan move straight ahead until reaching a wall (locate the walls)
   * animate PacMan (only small moving PacMan for now, the other one is to be animated when it has been eaten)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
+* Done
+  * animated small moving PacMan 
+  * added sprite-images experiment to Nursery folder
