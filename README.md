@@ -48,3 +48,7 @@
   * make PacMan move straight ahead until reaching a wall (locate the walls)
   * animate the other characters (ghosts, their eyes and their scared counterparts)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
+* Done
+  * place the board on canvas
+  * animate the other characters
+  * make PacMan move straight ahead (without the precise stopping part still)
