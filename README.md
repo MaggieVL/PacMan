@@ -46,3 +46,5 @@
 * Homework
   * make PacMan move until reaching a wall (locate the walls)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
+* Done
+  * researched keyboard events, tried to figure out how to locate the walls and make pacman stop when reaching a wall, plus when pacman turns around a corner, I have to switch the animation I use for the change of direction, I have to think about that as well
