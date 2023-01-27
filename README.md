@@ -1,6 +1,6 @@
-# 26th January 2023
+# 27th January 2023
 
-* 10th day of the project
+* 12th day of the project
 * Article https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
 * Mantra
   * Do everything yourself, do not search for ready code in the internet.
@@ -44,11 +44,5 @@
       * fruits appear for bonus points after eating a certain amount of yellow points in a level 
       * warp tunnels - travel to the opposite part of the map
 * Homework
-  * place the board on canvas
-  * make PacMan move straight ahead until reaching a wall (locate the walls)
-  * animate the other characters (ghosts, their eyes and their scared counterparts)
+  * make PacMan move until reaching a wall (locate the walls)
   * make PacMan eat the coins (mouth open on coin, shut otherwise and coin disappearing afterwards)
-* Done
-  * place the board on canvas
-  * animate the other characters
-  * make PacMan move straight ahead (without the precise stopping part still)
