@@ -9,4 +9,12 @@
   * The goal is to develop your skills, not the result
   * Make small steps
     * And we improve them
+    * Every day you should have progress w/ breaking the existing progress
 * Total reset and from the beginning 30 Jan
+* Homework
+  * show the labyrinth w/ basic html and css
+  * place the pacman on the labyrinth
+  * animate the pacman w/ javascript
+  * accept keyboard input
+  * move the pacman w/ the arrows
+  * place this inside a game loop (read the article)
