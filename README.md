@@ -11,7 +11,16 @@
     * And we improve them
     * Every day you should have progress w/ breaking the existing progress
 * Total reset and from the beginning 30 Jan
+* Maggie's features
+  * I need to see the big picture and what tools I can work with first so that I can analyse the task better and see the steps ahead
+  * perfectionism - find balance with pragmatism
+* Tips
+  * animate with js, don't do it with css, this animation should be in a game loop and with time we will make it okay
+  * find 3 docs for html, css, js - book time in the gantt - read them 3 times - every day i should have progress and should read some docs
 * Homework
   * animate the pacman w/ javascript
   * move the pacman continuously
-  * place this inside a game loop (read the article)
+  * place this inside a game loop (read the article) 
+  * use the real arrows to move pacman
+* Done
+  * move the pacman continuously
