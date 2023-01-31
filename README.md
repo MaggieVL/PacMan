@@ -18,3 +18,9 @@
   * accept keyboard input
   * move the pacman w/ the arrows
   * place this inside a game loop (read the article)
+* Done
+  * show the labyrinth
+  * place pacman on the labyrinth
+  * accept keyboard input
+  * move pacman with the arrows
+  * skim-read basic html mdn docs to refresh my html knowledge

@@ -1,0 +1,22 @@
+#full-labyrinth { 
+    position: absolute;
+    width: 227px;
+    height: 251px;
+    background: url(./Images/spritesheet.png) 0 0;
+    z-index: -100px;
+}
+
+#empty-labyrinth {
+    width: 230px;
+    height: 251px;
+    background: url(./Images/spritesheet.png) -225px 0;
+}
+
+#small-pacman-heading-right {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
+}
