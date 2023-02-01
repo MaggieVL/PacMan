@@ -3,7 +3,7 @@ console.log("pacman: ")
 console.log(pacman);
 
 window.addEventListener("keyup", (e) => {
-    console.log(e.key)
+    console.log(e.keyCode)
 
     const left = getComputedStyle(pacman).left;
     const parsedLeft = parseInt(left); 
@@ -12,22 +12,22 @@ window.addEventListener("keyup", (e) => {
 
     let k = 0;
     function moveOnce() { 
-        if(e.key === 'a') {
+        if(e.keyCode === 37) {
             pacman.style.left = (parsedLeft - k) + 'px';  
-        } else if(e.key === 'd'){
+        } else if(e.keyCode === 40){
             pacman.style.left = (parsedLeft + k) + 'px'; 
-        } else if(e.key === 'w') {
+        } else if(e.keyCode === 39) {
             pacman.style.top = (parsedTop - k) + 'px';
-        } else if(e.key === 's'){
+        } else if(e.keyCode === 38){
             pacman.style.top = (parsedTop + k) + 'px'; 
         }
         k++;
     }
 
-    switch(e.key) {
-        case 'a': setInterval(moveOnce, 20); break;
-        case 's': setInterval(moveOnce, 20); break;
-        case 'd': setInterval(moveOnce, 20); break;
-        case 'w': setInterval(moveOnce, 20); break;
+    switch(e.keyCode) {
+        case 37: setInterval(moveOnce, 20); break;
+        case 40: setInterval(moveOnce, 20); break;
+        case 39: setInterval(moveOnce, 20); break;
+        case 38: setInterval(moveOnce, 20); break;
     }
 })

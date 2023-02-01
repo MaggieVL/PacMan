@@ -2,6 +2,10 @@
     position: absolute;
     width: 227px;
     height: 251px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -113px;
     background: url(./Images/spritesheet.png) 0 0;
     z-index: -100px;
 }

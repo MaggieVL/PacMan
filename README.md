@@ -26,3 +26,6 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * moved the board in the center with flexbox but don't think it was okay, so I tried with the position property that is already used to style the tag and don't think it was helpful enough either, so i started reading a css tutorial to cover the first half of the points 
+  * use the real arrows to move pacman
