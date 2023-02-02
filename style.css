@@ -1,9 +1,9 @@
 #full-labyrinth { 
-    position: absolute;
-    width: 227px;
-    height: 251px;
+    position: fixed;
     top: 50%;
     left: 50%;
+    width: 227px;
+    height: 251px;
     margin-top: -125px;
     margin-left: -113px;
     background: url(./Images/spritesheet.png) 0 0;
@@ -17,9 +17,9 @@
 }
 
 #small-pacman-heading-right {
-    position: relative;
-    top: 10px;
-    left: 10px;
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
     width: 12px;
     height: 15px;
     background: url(./Images/spritesheet.png) -456px 0;

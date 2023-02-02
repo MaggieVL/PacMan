@@ -17,6 +17,8 @@
 * Tips
   * animate with js, don't do it with css, this animation should be in a game loop and with time we will make it okay
   * find 3 docs for html, css, js - book time in the gantt - read them 3 times - every day i should have progress and should read some docs
+  * divs.html - red, blue, yellow divs and check positions and flex, labyrinth, pacman, container
+  * move the containers center
 * Homework
   * read a bit of css docs
   * move the board in the center of the screen - change the way of doing it
@@ -26,3 +28,6 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * read css docs mainly on flex, position, grid, did the flexbox froggy and grid garden games to refresh my skills
+  * did some experiments on css positioning tools (flex-divs), moved the board in the center using the position property 

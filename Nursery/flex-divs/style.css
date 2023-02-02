@@ -1,0 +1,32 @@
+/* there's a need for parent only if we use flexbox
+but we won't in this case: we just center the children elements here
+/*#parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: yellowgreen;
+}*/
+
+#labyrinth {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    z-index: 1;
+}
+
+#pacman {
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
+    z-index: 2;
+}
