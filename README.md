@@ -26,3 +26,7 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done 
+  * tried to make the board bigger and more 'readable'
+  * tried to adjust PacMan's size based on the size of the tunnels in the new board
+  * made PacMan change direction of movement correctly

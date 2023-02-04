@@ -1,0 +1,27 @@
+/*tried using background-size, object-fit properties with different 
+values but none worked as expected so far*/
+#full-labyrinth { 
+    width: 227px;
+    height: 251px;
+    background: url(./Images/spritesheet.png) 0 0;
+}
+
+#parent {
+    width: 453px;
+    height: 501px;
+    z-index: -100px;
+    margin-top: -125px;
+    margin-left: -113px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+#small-pacman-heading-right {
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
+}
