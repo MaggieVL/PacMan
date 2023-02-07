@@ -1,12 +1,17 @@
+/*idea in progress
+#parent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}*/
+
 #full-labyrinth { 
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 227px;
-    height: 251px;
-    margin-top: -125px;
-    margin-left: -113px;
+    width: 48vw;
+    height: 100vh;
     background: url(./Images/spritesheet.png) 0 0;
+    background-size: auto 100vh;
     z-index: -100px;
 }
 
@@ -20,7 +25,8 @@
     position: absolute;
     top: 45vh;
     left: 45vw;
-    width: 12px;
-    height: 15px;
+    width: auto;
+    height: 10vh;
     background: url(./Images/spritesheet.png) -456px 0;
+    z-index: 10px;
 }

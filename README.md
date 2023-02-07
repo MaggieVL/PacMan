@@ -25,3 +25,7 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * scaled the picture of the labyrinth (made it bigger and readable, i could give it better quality but it's okay for now) - now its height is the size of the viewport for best readability (as some online pacman games already are doing)
+  * thought of a way to adjust Pacman's size, still in progress
+  * started reading about units in css, should continue tomorrow, so that i can adjust the size of the pictures in the best way using the correct unit (relative to the viewport, etc, whatever is the most reasonable)
