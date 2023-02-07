@@ -26,3 +26,7 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done 
+  * read more img and scaling images css docs with these in mind: 
+    * make the board bigger and more 'readable'
+    * animate the pacman w/ javascript
