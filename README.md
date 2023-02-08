@@ -24,3 +24,5 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * read a lot on responsive design and css units, tried different ways to show the right part of the image - it's a bit harder because there is more following the labyrinth on the x axis and i should think about scaling all the pictures afterwards and moving them in a different way probably while detecting the walls
