@@ -24,3 +24,5 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * made the labyrinth and pacman responsive but realised that I should make the movements and everything not fixed but adapt differently to the page and for a game it doesn't look that natural, I saw one pacman game page and the background was totally fixed, didn't respond, I think this is better, but i should definitely think more about how i position the pictures, what units and all
