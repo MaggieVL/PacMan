@@ -1,0 +1,108 @@
+/* it's a bit irrelevant to use flex for the labyrinth though*/
+#global-parent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#full-labyrinth { 
+    display: flex;
+    width: 48vw;
+    height: 100vh;
+    margin-left: 26vw;
+    background: url(./../../Images/spritesheet.png) 0 0;
+    background-size: 144vw 100vh;
+    z-index: -100;
+}
+
+#small-pacman-heading-right {
+    align-self: flex-end;
+    top: 74.4vh;
+    left: 49vw;
+    width: 2.5vw;
+    height: 6vh;
+    background: url(./../../Images/spritesheet.png) -96.5vw 0vh;
+    background-size: 144vw 100vh;
+    z-index: 10;
+}
+
+#full-labyrinth0 { 
+    position: fixed;
+    width: 48vw;
+    height: 100vh;
+    margin-left: 26vw;
+    background: url(./../../Images/spritesheet.png) 0 0;
+    background-size: 144vw 100vh;
+    z-index: -100;
+}
+
+#small-pacman-heading-right0 {
+    position: absolute;
+    top: 74.4vh;
+    left: 49vw;
+    width: 2.5vw;
+    height: 6vh;
+    background: url(./../../Images/spritesheet.png) -96.5vw 0vh;
+    background-size: 144vw 100vh;
+    z-index: 10;
+}
+
+#full-labyrinth1 { 
+    position: absolute;
+    width: 227px;
+    height: 251px;
+    background: url(./Images/spritesheet.png) 0 0;
+    z-index: -100px;
+}
+
+#small-pacman-heading-right1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
+}
+
+#full-labyrinth2 {
+    position: absolute;
+    width: 227px;
+    height: 251px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -113px;
+    background: url(./Images/spritesheet.png) 0 0;
+    z-index: -100px;
+}
+
+#small-pacman-heading-right2 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
+}
+
+#full-labyrinth3 {
+    position: absolute;
+    width: 227px;
+    height: 251px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -113px;
+    background: url(./Images/spritesheet.png) 0 0;
+    z-index: -100px;
+}
+
+#small-pacman-heading-right3 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
+}

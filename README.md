@@ -24,3 +24,6 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done
+  * saw there are all types of solutions for the game positioning and visualisations, so i have to decide my own
+  * tried to position the labyrinth and pacman start position with only position property, flex and started reading more about grid because i have the idea of using grid for making PacMan recognise walls and tunnels and centering the whole grid with flex or position (flex is probably better)
