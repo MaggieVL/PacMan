@@ -25,3 +25,5 @@
   * make PacMan identify walls and the borders of the board
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done 
+  * read about grid and started representing the labyrinth as a grid 
