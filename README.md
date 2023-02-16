@@ -23,3 +23,6 @@
   * make PacMan identify walls and the borders of the board (try with grid)
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
+* Done 
+  * read a full grid tutorial to check whether I can do the wall-identifying with it - https://css-tricks.com/snippets/css/complete-guide-grid/
+  * refreshed some of my js knowledge mostly for oop and objects in general
