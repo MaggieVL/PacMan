@@ -1,4 +1,4 @@
-# 8th February 2023
+# 16th February 2023
 
 * https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
 * Mantra
@@ -20,10 +20,6 @@
   * divs.html - red, blue, yellow divs and check positions and flex, labyrinth, pacman, container
   * move the containers center
 * Homework (in order of execution)
-  * test my idea to use grid for the wall-checking and the movements in the game as a whole (represent the labyrinth as a grid)
-  * decide on one way of doing the positioning (ask Thomas if there are any requirements or i should decide myself)
-  * make PacMan identify walls and the borders of the board
+  * make PacMan identify walls and the borders of the board (try with grid)
   * animate the pacman w/ javascript
   * place this inside a game loop (read the article) 
-* Done
-  * displayed the labyrinth with grid (tried and read stuff about grid)
