@@ -23,3 +23,5 @@
   * animate the pacman w/ javascript
   * make PacMan identify walls and the borders of the board
   * place this inside a game loop (read the article) 
+* Done
+  * animated Pacman

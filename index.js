@@ -1,4 +1,4 @@
-const pacman = document.querySelector('#small-pacman-heading-right');
+const pacman = document.querySelector('#small-pacman-turned-right-mouth-slightly-open');
 console.log("pacman: ")
 console.log(pacman);
 
@@ -28,6 +28,20 @@ window.addEventListener("keyup", (e) => {
     }
 
     if(e.keyCode >= 37 && e.keyCode <= 40) {
+        console.log('before move once')
         id = setInterval(moveOnce, 20);
+        console.log(id)
     }
 })
+
+function switchFrames() {
+    if (pacman.id == "small-pacman-turned-right-mouth-wide-open") {
+        console.log('in wide');
+        pacman.id = "small-pacman-turned-right-mouth-slightly-open";
+    } else {
+        console.log('in slightly')
+        pacman.id = "small-pacman-turned-right-mouth-wide-open";
+    }
+};
+
+setInterval(switchFrames, 200);

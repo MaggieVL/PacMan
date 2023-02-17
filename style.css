@@ -13,13 +13,33 @@
 - 1 4 4 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 1
 */
 
+#small-pacman-turned-right-mouth-wide-open {
+    position: absolute;
+    z-index: 10;
+    width: 3vw;
+    height: 6vh;
+    background: url(./Images/spritesheet.png) 44vw 0;
+    background-size: 144vw 100vh;
+    left: 49vw;
+    top: 74.5vh;
+}
+
+#small-pacman-turned-right-mouth-slightly-open {
+    position: absolute;
+    z-index: 10;
+    width: 3vw;
+    height: 6vh;
+    background: url(./Images/spritesheet.png) 47.4vw  0;
+    background-size: 144vw 100vh;
+    left: 49vw;
+    top: 74.5vh;
+}
+
 #full-labyrinth { 
-    display: grid;
-    grid-template-columns: 2% 8% 12% 15% 8% 4% 8% 15% 8% 12% 8% 2%;
-    grid-template-rows: 1.4% 7.4% 7.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 3.4% 7.4% 1.4%;
     position: fixed;
     width: 48vw;
     height: 100vh;
+    margin-left: 26vw;
     background: url(./Images/spritesheet.png) 0 0;
     background-size: 144vw 100vh;
     z-index: -100;
