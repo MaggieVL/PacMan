@@ -1,14 +1,15 @@
-const pacman = document.querySelector('#small-pacman-turned-right-mouth-slightly-open');
-console.log("pacman: ")
-console.log(pacman);
+const pacman = document.querySelector('#small-pacman-full-circle');
 
-let id;
+let id, pacmanDirectionId;;
 window.addEventListener("keyup", (e) => {
-    console.log(e.keyCode)
-
     if(id) {
         clearInterval(id);
         id = null;
+    }
+
+    if(pacmanDirectionId) {
+        clearInterval(pacmanDirectionId);
+        pacmanDirectionId = null;
     }
 
     const left = getComputedStyle(pacman).left;
@@ -19,29 +20,33 @@ window.addEventListener("keyup", (e) => {
     let k = 0;
     function moveOnce() { 
         switch(e.keyCode) {
-            case 37: pacman.style.left = (parsedLeft - k) + 'px'; break; //left
-            case 39: pacman.style.left = (parsedLeft + k) + 'px'; break; //right
-            case 38: pacman.style.top = (parsedTop - k) + 'px'; break; //up
-            case 40: pacman.style.top = (parsedTop + k) + 'px'; break; //down
+            case 37: { pacman.style.left = (parsedLeft - k) + 'px';} break; //left
+            case 39: { pacman.style.left = (parsedLeft + k) + 'px'; } break; //right
+            case 38: { pacman.style.top = (parsedTop - k) + 'px'; } break; //up
+            case 40: { pacman.style.top = (parsedTop + k) + 'px'; } break; //down
         }
         k++;
     }
 
+    function switchFrames() {
+        switch(e.keyCode) {
+            case 37: { toggleBetweenIds(pacman, 'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open');} break; //left
+            case 39: { toggleBetweenIds(pacman, 'small-pacman-turned-right-mouth-wide-open', 'small-pacman-turned-right-mouth-slightly-open');} break; //right
+            case 38: { toggleBetweenIds(pacman, 'small-pacman-turned-upside-down-mouth-wide-open', 'small-pacman-turned-upside-down-mouth-slightly-open');} break; //up
+            case 40: { toggleBetweenIds(pacman, 'small-pacman-turned-upright-mouth-wide-open', 'small-pacman-turned-upright-mouth-slightly-open');} break; //down
+        }
+    };
+
     if(e.keyCode >= 37 && e.keyCode <= 40) {
-        console.log('before move once')
         id = setInterval(moveOnce, 20);
-        console.log(id)
+        pacmanDirectionId = setInterval(switchFrames, 200)
     }
 })
 
-function switchFrames() {
-    if (pacman.id == "small-pacman-turned-right-mouth-wide-open") {
-        console.log('in wide');
-        pacman.id = "small-pacman-turned-right-mouth-slightly-open";
+function toggleBetweenIds(object, id1, id2) {
+    if (object.id == id1) {
+        object.id = id2;
     } else {
-        console.log('in slightly')
-        pacman.id = "small-pacman-turned-right-mouth-wide-open";
+        object.id = id1;
     }
-};
-
-setInterval(switchFrames, 200);
+}

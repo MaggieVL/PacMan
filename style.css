@@ -1,65 +1,98 @@
+#full-labyrinth { 
+    position: fixed;
+    z-index: -100;
+    width: 227px;
+    height: 251px;
+    background: url(./Images/spritesheet.png) 0 0;
+}
+
+#small-pacman-full-circle {
+    position: absolute;
+    z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -488px 0;
+}
+
 #small-pacman-turned-right-mouth-wide-open {
     position: absolute;
     z-index: 10;
-    width: 3vw;
-    height: 6vh;
-    background: url(./Images/spritesheet.png) 44vw 0;
-    background-size: 144vw 100vh;
-    left: 49vw;
-    top: 74.5vh;
+    top: 189px;
+    left: 113px;
+    width: 12px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px 0;
 }
 
 #small-pacman-turned-right-mouth-slightly-open {
     position: absolute;
     z-index: 10;
-    width: 3vw;
-    height: 6vh;
-    background: url(./Images/spritesheet.png) 47.4vw  0;
-    background-size: 144vw 100vh;
-    left: 49vw;
-    top: 74.5vh;
+    top: 189px;
+    left: 113px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472px 0;
 }
 
-#full-labyrinth { 
-    position: fixed;
-    width: 48vw;
-    height: 100vh;
-    margin-left: 26vw;
-    background: url(./Images/spritesheet.png) 0 0;
-    background-size: 144vw 100vh;
-    z-index: -100;
-}
-
-#small-pacman-heading-right {
+#small-pacman-turned-left-mouth-wide-open { 
     position: absolute;
-    top: 45vh;
-    left: 45vw;
-    width: 10vw;
-    height: 10vh;
-    background: url(./Images/spritesheet.png) -456px 0;
     z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 16px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456px -16px;
 }
 
-/*orange monster*/
-
-#orange-monster-looking-up-1 {
+#small-pacman-turned-left-mouth-slightly-open { 
     position: absolute;
-    top: 20vh;
-    left: 30vw;
-    width: 3.6vw;
-    height: 7vh;
-    background: url(./Images/spritesheet.png) 34vw -45vh;
-    background-size: 144vw 100vh;
     z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 16px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472px -16px;
 }
 
-#orange-monster-looking-up-2 {
+#small-pacman-turned-upside-down-mouth-wide-open { 
     position: absolute;
-    top: 30vh;
-    left: 30vw;
-    width: 3.6vw;
-    height: 7vh;
-    background: url(./Images/spritesheet.png) 30.6vw -45vh;
-    background-size: 144vw 100vh;
     z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -455px -33px;
+}
+
+#small-pacman-turned-upside-down-mouth-slightly-open { 
+    position: absolute;
+    z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -471px -32px;
+}
+
+
+#small-pacman-turned-upright-mouth-wide-open { 
+    position: absolute;
+    z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -455px -47px;
+}
+
+#small-pacman-turned-upright-mouth-slightly-open { 
+    position: absolute;
+    z-index: 10;
+    top: 189px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -471px -47px;
 }
