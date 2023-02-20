@@ -22,3 +22,7 @@
   * animate the ghosts
   * make the ghosts move up and down in their cage before leaving it
   * make PacMan identify walls and the borders of the board
+* Done
+  * scaled the orange ghost looking up
+  * reversed all scaling and went back to the original proportions (as discussed with T.E.Shaw, this can be done later if needed, but is not important now)
+  * animated all pacman versions (up, down, left and right animations), set pacman's start position (and start image - the full circle), made pacman use the right animations when going in different directions (show pictures of him going left, when we change his direction to left, the same applies for the other directions), made those animations connected right - the new photos start showing from where the previous ones stopped showing, they don't start from a completely random different position on the board
