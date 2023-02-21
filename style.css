@@ -96,6 +96,86 @@
     background: url(./Images/spritesheet.png) -471px -47px;
 }
 
+#red-monster-looking-to-the-right-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -455px -64px;
+}
+
+#red-monster-looking-to-the-right-2 {
+    position: absolute;
+    z-index: 20; 
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -471px -64px;
+}
+
+#red-monster-looking-to-the-left-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -487px -64px;
+}
+
+#red-monster-looking-to-the-left-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -503px -64px;
+}
+
+#red-monster-looking-up-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -519px -64px;
+}
+
+#red-monster-looking-up-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -535px -64px;
+}
+
+#red-monster-looking-down-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -551px -64px;
+}
+
+#red-monster-looking-down-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 93px;
+    left: 111px;
+    width: 17px;
+    height: 16px;
+    background: url(./Images/spritesheet.png) -567px -64px;
+}
+
 .empty-blue-space {
     position: absolute;
     z-index: -10;
