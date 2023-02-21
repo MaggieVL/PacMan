@@ -25,3 +25,10 @@
   * make Pacman eat the coins
     * make the score go up every time he does so
   * make each ghost move in its individual way towards Pacman
+  * make the power pellets blink
+  * fix the start position of the red ghost (Blinky) 
+    * make him chase Pacman directly
+* Done
+  * removed the white border around all images
+  * set the starting point of the red ghost
+  * made the power pellets blink
