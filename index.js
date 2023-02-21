@@ -50,3 +50,18 @@ function toggleBetweenIds(object, id1, id2) {
         object.id = id1;
     }
 }
+
+const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space');
+function toggleBetweenZIndices(object, zIndex1, zIndex2) {
+    if(object.style.zIndex == zIndex1) {
+        object.style.zIndex = zIndex2;
+    } else {
+        object.style.zIndex = zIndex1;
+    }
+}
+
+function switchPelletVisibility() {
+    emptyBlueSpaces.forEach((element) =>  toggleBetweenZIndices(element, -5, 5))
+}
+
+setInterval(switchPelletVisibility)

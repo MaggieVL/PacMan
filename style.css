@@ -1,6 +1,6 @@
 #full-labyrinth { 
     position: fixed;
-    z-index: -100;
+    z-index: 0;
     width: 227px;
     height: 251px;
     background: url(./Images/spritesheet.png) 0 0;
@@ -76,7 +76,6 @@
     background: url(./Images/spritesheet.png) -471px -32px;
 }
 
-
 #small-pacman-turned-upright-mouth-wide-open { 
     position: absolute;
     z-index: 10;
@@ -95,4 +94,32 @@
     width: 17px;
     height: 15px;
     background: url(./Images/spritesheet.png) -471px -47px;
+}
+
+.empty-blue-space {
+    position: absolute;
+    z-index: -10;
+    width: 10px;
+    height: 10px;
+    background: url(./Images/spritesheet.png) -250px -64px;
+}
+
+#left-up {
+    top: 31px;
+    left: 15px;
+}
+
+#right-up {
+    top: 31px;
+    left: 215px;
+}
+
+#left-down {
+    top: 191px;
+    left: 15px;
+}
+
+#right-down {
+    top: 191px;
+    left: 215px;
 }
