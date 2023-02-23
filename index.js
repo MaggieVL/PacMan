@@ -1,6 +1,30 @@
 const pacman = document.querySelector('#small-pacman-full-circle');
+const redGhost = document.querySelector('#red-monster-looking-up-1')
 
-let id, pacmanDirectionId;;
+const pacmanIds = [
+                    'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open',
+                    'small-pacman-turned-right-mouth-wide-open', 'small-pacman-turned-right-mouth-slightly-open',
+                    'small-pacman-turned-upside-down-mouth-wide-open', 'small-pacman-turned-upside-down-mouth-slightly-open',
+                    'small-pacman-turned-upright-mouth-wide-open', 'small-pacman-turned-upright-mouth-slightly-open'
+                  ]
+
+const redGhostIds = [
+                        'red-monster-looking-to-the-right-1', 'red-monster-looking-to-the-right-2',
+                        'red-monster-looking-to-the-left-1', 'red-monster-looking-to-the-left-2',
+                        'red-monster-looking-up-1', 'red-monster-looking-up-2',
+                        'red-monster-looking-down-1', 'red-monster-looking-down-2'
+                    ]
+
+function switchFrames(keyCode, object, ids) {
+    switch(keyCode) {
+        case 37: { toggleBetweenIds(object, ids[0], ids[1]);} break; //left
+        case 39: { toggleBetweenIds(object, ids[2], ids[3]);} break; //right
+        case 38: { toggleBetweenIds(object, ids[4], ids[5]);} break; //up
+        case 40: { toggleBetweenIds(object, ids[6], ids[7]);} break; //down
+    }
+};
+
+let id, pacmanDirectionId;
 window.addEventListener("keyup", (e) => {
     if(id) {
         clearInterval(id);
@@ -16,6 +40,7 @@ window.addEventListener("keyup", (e) => {
     const parsedLeft = parseInt(left); 
     const topEl = getComputedStyle(pacman).top;
     const parsedTop = parseInt(topEl);
+    var rect = pacman.getBoundingClientRect();
 
     let k = 0;
     function moveOnce() { 
@@ -28,18 +53,9 @@ window.addEventListener("keyup", (e) => {
         k++;
     }
 
-    function switchFrames() {
-        switch(e.keyCode) {
-            case 37: { toggleBetweenIds(pacman, 'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open');} break; //left
-            case 39: { toggleBetweenIds(pacman, 'small-pacman-turned-right-mouth-wide-open', 'small-pacman-turned-right-mouth-slightly-open');} break; //right
-            case 38: { toggleBetweenIds(pacman, 'small-pacman-turned-upside-down-mouth-wide-open', 'small-pacman-turned-upside-down-mouth-slightly-open');} break; //up
-            case 40: { toggleBetweenIds(pacman, 'small-pacman-turned-upright-mouth-wide-open', 'small-pacman-turned-upright-mouth-slightly-open');} break; //down
-        }
-    };
-
     if(e.keyCode >= 37 && e.keyCode <= 40) {
         id = setInterval(moveOnce, 20);
-        pacmanDirectionId = setInterval(switchFrames, 200)
+        pacmanDirectionId = setInterval(switchFrames, 200, e.keyCode, pacman, pacmanIds)
     }
 })
 
@@ -66,40 +82,42 @@ function switchPelletVisibility() {
 
 setInterval(switchPelletVisibility)
 
-const redGhost = document.querySelector('#red-monster-looking-up-1')
-console.log(redGhost)
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+function getRandomInt(min, max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-let redGhostId;
+let redGhostId, redGhostDirectionId;
 function f() {
-
     if(redGhostId) {
         clearInterval(redGhostId);
         redGhostId = null;
     }
 
-    const left = getComputedStyle(redGhost).left;
-    const parsedLeft = parseInt(left); 
-    const topEl = getComputedStyle(redGhost).top;
-    const parsedTop = parseInt(topEl);
+    if(redGhostDirectionId) {
+        clearInterval(redGhostDirectionId);
+        redGhostDirectionId = null;
+    }
+    
+    const leftR = getComputedStyle(redGhost).left;
+    const parsedLeftR = parseInt(leftR); 
+    const topElR = getComputedStyle(redGhost).top;
+    const parsedTopR = parseInt(topElR);
 
-    let number = getRandomInt(4);
+    let number = getRandomInt(37, 40);
+    console.log(number)
     let k = 0;
     function move() { 
         switch(number) {
-            case 0: { redGhost.style.left = (parsedLeft - k) + 'px';} break; //left
-            case 1: { redGhost.style.left = (parsedLeft + k) + 'px'; } break; //right
-            case 2: { redGhost.style.top = (parsedTop - k) + 'px'; } break; //up
-            case 3: { redGhost.style.top = (parsedTop + k) + 'px'; } break; //down
+            case 39: { redGhost.style.left = (parsedLeftR - k) + 'px';} break; //left
+            case 37: { redGhost.style.left = (parsedLeftR + k) + 'px'; } break; //right
+            case 38: { redGhost.style.top = (parsedTopR - k) + 'px'; } break; //up
+            case 40: { redGhost.style.top = (parsedTopR + k) + 'px'; } break; //down
         }
         k++;
     }
 
     redGhostId = setInterval(move, 20);
+    redGhostDirectionId = setInterval(switchFrames, 200, number, redGhost, redGhostIds)
 }
-
 
 setInterval(f, 1000)

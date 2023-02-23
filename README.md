@@ -1,4 +1,4 @@
-# 21th February 2023
+# 23th February 2023
 
 * https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
 * Mantra
@@ -25,3 +25,7 @@
   * make Pacman eat the coins
     * make the score go up every time he does so
   * make the red ghost chase Pacman in its own way - directly
+* Done
+  * set the starting positions of the other ghosts
+  * animated the red ghost and made it switch animations when changing direction
+  * thought about the way I can do wall-detection
