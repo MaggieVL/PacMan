@@ -65,3 +65,41 @@ function switchPelletVisibility() {
 }
 
 setInterval(switchPelletVisibility)
+
+const redGhost = document.querySelector('#red-monster-looking-up-1')
+console.log(redGhost)
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+let redGhostId;
+function f() {
+
+    if(redGhostId) {
+        clearInterval(redGhostId);
+        redGhostId = null;
+    }
+
+    const left = getComputedStyle(redGhost).left;
+    const parsedLeft = parseInt(left); 
+    const topEl = getComputedStyle(redGhost).top;
+    const parsedTop = parseInt(topEl);
+
+    let number = getRandomInt(4);
+    let k = 0;
+    function move() { 
+        switch(number) {
+            case 0: { redGhost.style.left = (parsedLeft - k) + 'px';} break; //left
+            case 1: { redGhost.style.left = (parsedLeft + k) + 'px'; } break; //right
+            case 2: { redGhost.style.top = (parsedTop - k) + 'px'; } break; //up
+            case 3: { redGhost.style.top = (parsedTop + k) + 'px'; } break; //down
+        }
+        k++;
+    }
+
+    redGhostId = setInterval(move, 20);
+}
+
+
+setInterval(f, 1000)

@@ -25,3 +25,6 @@
   * make Pacman eat the coins
     * make the score go up every time he does so
   * make each ghost move in its individual way towards Pacman
+* Done
+  * made the red ghost move and switch direction randomly without the arrow keys having been touched 
+  * wrote the coordinates of the tunnels in an array - for the 'make pacman recognise the walls task'
