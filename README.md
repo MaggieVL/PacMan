@@ -25,3 +25,5 @@
   * make Pacman eat the coins
     * make the score go up every time he does so
   * make the red ghost chase Pacman in its own way - directly
+* Done
+  * made the ghosts move up and down in their cage

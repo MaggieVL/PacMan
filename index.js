@@ -1,5 +1,5 @@
 const pacman = document.querySelector('#small-pacman-full-circle');
-const redGhost = document.querySelector('#red-monster-looking-up-1')
+const redGhost = document.querySelector('#red-monster-looking-up-1');
 
 const pacmanIds = [
                     'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open',
@@ -456,3 +456,38 @@ function f() {
 }
 
 setInterval(f, 1000)
+
+const cyanGhost = document.querySelector('#cyan-monster-looking-to-the-right-1');
+cyanGhost.style.left = parseFloat(getComputedStyle(cyanGhost).left) + 'px';
+cyanGhost.style.top = parseFloat(getComputedStyle(cyanGhost).top) + 'px';
+cyanGhost.direction = 'down';
+
+const pinkGhost = document.querySelector('#pink-monster-looking-to-the-right-1');
+pinkGhost.style.left = parseFloat(getComputedStyle(pinkGhost).left) + 'px';
+pinkGhost.style.top = parseFloat(getComputedStyle(pinkGhost).top) + 'px';
+pinkGhost.direction = 'up';
+
+const orangeGhost = document.querySelector('#orange-monster-looking-to-the-right-1');
+orangeGhost.style.left = parseFloat(getComputedStyle(orangeGhost).left) + 'px';
+orangeGhost.style.top = parseFloat(getComputedStyle(orangeGhost).top) + 'px';
+orangeGhost.direction = 'down';
+
+function g(ghost) {
+    if(parseFloat(ghost.style.top) === 112.5) {
+        ghost.direction = 'down';
+
+    } else if(parseFloat(ghost.style.top) === 120.5) {
+        ghost.direction = 'up';
+    }
+
+    if(ghost.direction === 'up') {
+        ghost.style.top = (parseFloat(ghost.style.top) - 0.5) + 'px';
+
+    } else if(ghost.direction === 'down') {
+        ghost.style.top = (parseFloat(ghost.style.top) + 0.5) + 'px';
+    } 
+}
+
+setInterval(g, 20, cyanGhost);
+setInterval(g, 20, pinkGhost);
+setInterval(g, 20, orangeGhost);
