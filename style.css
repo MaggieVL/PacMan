@@ -61,7 +61,7 @@
     z-index: 10;
     top: 188.5px;
     left: 113px;
-    width: 17px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -455px -33px;
 }
@@ -71,7 +71,7 @@
     z-index: 10;
     top: 188.5px;
     left: 113px;
-    width: 17px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -471px -32px;
 }
@@ -81,7 +81,7 @@
     z-index: 10;
     top: 188.5px;
     left: 113px;
-    width: 17px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -455px -47px;
 }
@@ -91,7 +91,7 @@
     z-index: 10;
     top: 188.5px;
     left: 113px;
-    width: 17px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -471px -47px;
 }
@@ -442,4 +442,114 @@
     width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -568.3px -112.7px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-1 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -503px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-2 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -519px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-3 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -535px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-4 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -551px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-5 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -567px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-6 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -583px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-7 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -599px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-8 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -615px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-9 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -631px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-10 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -647px -1px;
+}
+
+#small-pacman-exploding-turned-upside-down-mouth-open-11 {
+    position: absolute;
+    z-index: 20;
+    top: 188.5px;
+    left: 113px;
+    width: 17px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -663px -3px;
 }

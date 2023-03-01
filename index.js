@@ -53,135 +53,150 @@ const orangeGhostIds = [
                         'orange-monster-looking-to-the-left-1', 'orange-monster-looking-to-the-left-2',
                         'orange-monster-looking-up-1', 'orange-monster-looking-up-2',
                         'orange-monster-looking-down-1', 'orange-monster-looking-down-2'
-                    ]                   
+                    ] 
+                    
+const explodingPacmanIdBase = 'small-pacman-exploding-turned-upside-down-mouth-open-';
 
-// all checked, they are right and full
+//exploding pacman - to be used when pacman runs into a ghost
+/*let i = 0;
+function explode(object) {
+    if(i < 12) {
+        console.log(object.id)
+        object.id = explodingPacmanIdBase + i;
+        i++;
+    } else { 
+        i = 0;
+    }
+}
+
+setInterval(explode, 100, pacman);*/
+
 const verticalLines = [  // 1st line l to r
-                        { // vertical up - 1 - done
+                        { // vertical up - 1
                             startTop: 12.5, 
                             endTop: 68.5, 
                             left: 12.5, 
                         }, 
-                        { // vertical down 1 - 1 - done
+                        { // vertical down 1 - 1
                             startTop: 164.5, 
                             endTop: 188.5,
                             left: 12.5,  
                         },
-                        { // vertical down 2 - 1 - done
+                        { // vertical down 2 - 1
                             startTop: 212.5, 
                             endTop: 236.5, 
                             left: 12.5, 
                         },
                         // 2nd line l to r
-                        { // vertical 1.5 - down - done
+                        { // vertical 1.5 - down
                             left: 28.5,
                             startTop: 188.5,
                             endTop: 212.5,
                         },
                         // 3rd line l to r
-                        { // vertical almost full - 2 - done 
+                        { // vertical almost full - 2 
                             startTop: 12.5,
                             endTop: 212.5, 
                             left: 52.5,  
                         }, 
                         // 4th line l to r
-                        { // vertical 1 - 3 - done
+                        { // vertical 1 - 3
                             startTop: 44.5,
                             endTop: 68.5,
                             left: 76.5,
                         },
-                        { // vertical 2 - 3 - done
+                        { // vertical 2 - 3
                             startTop: 92.5,
                             endTop: 164.5,
                             left: 76.5,
                         },
-                        { // vertical 3 - 3 - done
+                        { // vertical 3 - 3
                             startTop: 188.5,
                             endTop: 212.5,
                             left: 76.5,
                         },
                         // 5th line
-                        { // vertical 1 - 4 - done
+                        { // vertical 1 - 4
                             startTop: 12.5,
                             endTop: 44.5,
                             left: 100.5,
                         },
-                        { // vertical 2 - 4 - done
+                        { // vertical 2 - 4
                             startTop: 68.5,
                             endTop: 92.5,
                             left: 100.5,
                         },
-                        { // vertical 3 - 4 - done
+                        { // vertical 3 - 4
                             startTop: 164.5,
                             endTop: 188.5,
                             left: 100.5,
                         },
-                        { // vertical 4 - 4 - done
+                        { // vertical 4 - 4
                             startTop: 212.5,
                             endTop: 236.5,
                             left: 100.5,
                         },
                         // 6th line
-                        { // vertical 1 - 5 - done
+                        { // vertical 1 - 5
                             startTop: 12.5,
                             endTop: 44.5,
                             left: 124.5,
                         },
-                        { // vertical 2 - 5 - done
+                        { // vertical 2 - 5
                             startTop: 68.5,
                             endTop: 92.5,
                             left: 124.5,
                         },
-                        { // vertical 3 - 5 - done
+                        { // vertical 3 - 5
                             startTop: 164.5,
                             endTop: 188.5,
                             left: 124.5,
                         },
-                        { // vertical 4 - 5 - done
+                        { // vertical 4 - 5
                             startTop: 212.5,
                             endTop: 236.5,
                             left: 124.5,
                         }, 
                         // 7th line
-                        { // vertical 1 - 6 - done
+                        { // vertical 1 - 6
                             startTop: 44.5,
                             endTop: 68.5,
                             left: 148.5,
                         }, 
-                        { // vertical 2 - 6 - done
+                        { // vertical 2 - 6
                             startTop: 92.5,
                             endTop: 164.5,
                             left: 148.5,
                         },
-                        { // vertical 3 - 6 - done
+                        { // vertical 3 - 6
                             startTop: 188.5,
                             endTop: 212.5,
                             left: 148.5,
                         }, 
                         // 8th line
-                        { // vertical 7 - almost full - done
+                        { // vertical 7 - almost full
                             startTop: 12.5,
                             endTop: 212.5,
                             left: 172.5,
                         },
                         // 9th line
-                        { // 7.5 - vertical missed right - done
+                        { // 7.5 - vertical missed right
                             left: 196.5,
                             startTop: 188.5,
                             endTop: 212.5,
                         },
                         // 10th line
-                        { // vertical 1 - 8 - done
+                        { // vertical 1 - 8
                             startTop: 12.5, 
                             endTop: 68.5, 
                             left: 212.5,
                         }, 
-                        { // vertical 2 - 8 - done
+                        { // vertical 2 - 8
                             startTop: 164.5, 
                             endTop: 188.5,
                             left: 212.5,
                         }, 
-                        { // vertical 3 - 8 - done
+                        { // vertical 3 - 8
                             startTop: 212.5, 
                             endTop: 236.5, 
                             left: 212.5,
@@ -190,46 +205,46 @@ const verticalLines = [  // 1st line l to r
 
 const horizontalLines = [
 // first line 
-// left up 1 - horizontal - done
+// left up 1 - horizontal
 { 
     top: 12.5, 
     startLeft: 12.5, 
     endLeft: 100.5 
 },
-{  // right up 1 - horizontal - done
+{  // right up 1 - horizontal
     top: 12.5, 
     startLeft: 124.5,  
     endLeft: 212.5 
 },
 //second line 
-{  // full line up 2 - horizontal - done
+{  // full line up 2 - horizontal
     top: 44.5, 
     startLeft: 12.5, 
     endLeft: 212.5 
 }, 
 // 3rd line
-{ // left line up 3 - horizontal - done
+{ // left line up 3 - horizontal
     top: 68.5, 
     startLeft: 12.5, 
     endLeft: 52.5
 },
-{ // middle left line up 3 - horizontal - done
+{ // middle left line up 3 - horizontal
     top: 68.5, 
     startLeft: 76.5, 
     endLeft: 100.5 
 },
-{ // middle right line up 3 - horizontal - done
+{ // middle right line up 3 - horizontal
     top: 68.5, 
     startLeft: 124.5, 
     endLeft: 148.5 
 },
-{ // right line up 3 - horizontal - done
+{ // right line up 3 - horizontal
     top: 68.5, 
     startLeft: 172.5, 
     endLeft: 212.5
 }, 
 // 4th line
-{ // line above the cage - horizontal - done
+{ // line above the cage - horizontal
     top: 92.5,
     startLeft: 76.5,
     endLeft: 148.5,
@@ -237,67 +252,67 @@ const horizontalLines = [
 // 5th line
 //this is the middle line that is specific, may be get it out for now
 // instead of it, visualise only the part of it that is fully in the labyrinth
-{ // middle line left 0 - horizontal - done
+{ // middle line left 0 - horizontal
     top: 116.5, 
     startLeft: 8.5, 
     endLeft:  76.5
 }, 
-{ // middle line right 0 - horizontal - done
+{ // middle line right 0 - horizontal
     top: 116.5, 
     startLeft: 148.5, 
     endLeft:  219.5
 },
 // 6th line
-// line under the cage - done
+// line under the cage
 {
     top: 140.5,
     startLeft: 76.5,
     endLeft: 148.5,
 },
 // 7th line
-{ // left line down 1 - horizontal - done
+{ // left line down 1 - horizontal
     top: 164.5, 
     startLeft: 12.5, 
     endLeft: 100.5 
 }, 
-{ // right line down 1 - horizontal - done
+{ // right line down 1 - horizontal
     top: 164.5, 
     startLeft: 124.5, 
     endLeft: 212.5
 },
 // 8th line
-{ // left line down 2 - horizontal - done
+{ // left line down 2 - horizontal
     top: 188.5, 
     startLeft: 12.5, 
     endLeft: 28.5  
 },
-{ // middle line down 2 - horizontal - done
+{ // middle line down 2 - horizontal
     top: 188.5, 
     startLeft: 52.5, 
     endLeft: 172.5
 }, 
-{ // right line down 2 - horizontal - done
+{ // right line down 2 - horizontal
     top: 188.5, 
     startLeft: 196.5, 
     endLeft: 212.5
 },
 // 9th line
-{ // right line down 3 - horizontal - done
+{ // right line down 3 - horizontal
     top: 212.5, 
     startLeft: 12.5, 
     endLeft: 52.5
 },
-{ // right middle line down 3 - horizontal - done
+{ // right middle line down 3 - horizontal
     top: 212.5, 
     startLeft: 76.5, 
     endLeft: 100.5
 }, 
-{ // left middle line down 3 - horizontal - done
+{ // left middle line down 3 - horizontal
     top: 212.5, 
     startLeft: 124.5, 
     endLeft: 148.5
 }, 
-{ // right line down 3 - horizontal - done
+{ // right line down 3 - horizontal
     top: 212.5, 
     startLeft: 172.5, 
     endLeft: 212.5
