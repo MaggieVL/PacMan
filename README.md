@@ -24,3 +24,6 @@
   * make Pacman eat the coins
     * make the score go up every time he does so
   * make the red ghost chase Pacman in its own way - directly
+* Done 
+  * animated the ghosts in the cage
+  * tried to solve the wall-identification inner tunnel bug

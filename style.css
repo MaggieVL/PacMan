@@ -214,6 +214,76 @@
     background: url(./Images/spritesheet.png) -456.3px -96.4px;
 }
 
+#cyan-monster-looking-to-the-right-2 {
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px; 
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472.3px -96.4px;
+}
+
+#cyan-monster-looking-to-the-left-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -488.3px -96.4px;
+}
+
+#cyan-monster-looking-to-the-left-2 {
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px; 
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -504.3px -96.4px;
+}
+
+#cyan-monster-looking-up-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -520.3px -96.4px;
+}
+
+#cyan-monster-looking-up-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -536.3px -96.4px;
+}
+
+#cyan-monster-looking-down-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -552.3px -96.4px;
+}
+
+#cyan-monster-looking-down-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 97px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -568.3px -96.4px;
+}
+
 #pink-monster-looking-to-the-right-1 { 
     position: absolute;
     z-index: 20;
@@ -224,6 +294,76 @@
     background: url(./Images/spritesheet.png) -456.3px -80.7px;
 }
 
+#pink-monster-looking-to-the-right-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472.3px -80.7px;
+}
+
+#pink-monster-looking-to-the-left-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -488.3px -80.7px;
+}
+
+#pink-monster-looking-to-the-left-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -504.3px -80.7px;
+}
+
+#pink-monster-looking-up-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -520.3px -80.7px;
+}
+
+#pink-monster-looking-up-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -536.3px -80.7px;
+}
+
+#pink-monster-looking-down-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -552.3px -80.7px;
+}
+
+#pink-monster-looking-down-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 112.7px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -568.3px -80.7px;
+}
+
 #orange-monster-looking-to-the-right-1 { 
     position: absolute;
     z-index: 20;
@@ -232,4 +372,74 @@
     width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -456.3px -112.7px;
+}
+
+#orange-monster-looking-to-the-right-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472.3px -112.7px;
+}
+
+#orange-monster-looking-to-the-left-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -488.3px -112.7px;
+}
+
+#orange-monster-looking-to-the-left-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -504.3px -112.7px;
+}
+
+#orange-monster-looking-up-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -520.3px -112.7px;
+}
+
+#orange-monster-looking-up-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -536.3px -112.7px;
+}
+
+#orange-monster-looking-down-1 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -552.3px -112.7px;
+}
+
+#orange-monster-looking-down-2 { 
+    position: absolute;
+    z-index: 20;
+    top: 116.5px;
+    left: 128.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -568.3px -112.7px;
 }

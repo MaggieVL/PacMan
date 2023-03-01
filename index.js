@@ -1,6 +1,25 @@
 const pacman = document.querySelector('#small-pacman-full-circle');
 const redGhost = document.querySelector('#red-monster-looking-up-1');
 
+const cyanGhost = document.querySelector('#cyan-monster-looking-up-1');
+const pinkGhost = document.querySelector('#pink-monster-looking-down-1');
+const orangeGhost = document.querySelector('#orange-monster-looking-up-1');
+
+pacman.style.left = getComputedStyle(pacman).left;
+pacman.style.top = getComputedStyle(pacman).top;
+
+cyanGhost.style.left = getComputedStyle(cyanGhost).left;
+cyanGhost.style.top = getComputedStyle(cyanGhost).top;
+cyanGhost.direction = 'down';
+
+pinkGhost.style.left = getComputedStyle(pinkGhost).left;
+pinkGhost.style.top = getComputedStyle(pinkGhost).top;
+pinkGhost.direction = 'up';
+
+orangeGhost.style.left = getComputedStyle(orangeGhost).left;
+orangeGhost.style.top = getComputedStyle(orangeGhost).top;
+orangeGhost.direction = 'down';
+
 const pacmanIds = [
                     'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open',
                     'small-pacman-turned-right-mouth-wide-open', 'small-pacman-turned-right-mouth-slightly-open',
@@ -14,6 +33,27 @@ const redGhostIds = [
                         'red-monster-looking-up-1', 'red-monster-looking-up-2',
                         'red-monster-looking-down-1', 'red-monster-looking-down-2'
                     ]
+
+const cyanGhostIds = [
+                        'cyan-monster-looking-to-the-right-1', 'cyan-monster-looking-to-the-right-2',
+                        'cyan-monster-looking-to-the-left-1', 'cyan-monster-looking-to-the-left-2',
+                        'cyan-monster-looking-up-1', 'cyan-monster-looking-up-2',
+                        'cyan-monster-looking-down-1', 'cyan-monster-looking-down-2'
+                    ]
+
+const pinkGhostIds = [
+                        'pink-monster-looking-to-the-right-1', 'pink-monster-looking-to-the-right-2',
+                        'pink-monster-looking-to-the-left-1', 'pink-monster-looking-to-the-left-2',
+                        'pink-monster-looking-up-1', 'pink-monster-looking-up-2',
+                        'pink-monster-looking-down-1', 'pink-monster-looking-down-2'
+                    ]
+
+const orangeGhostIds = [
+                        'orange-monster-looking-to-the-right-1', 'orange-monster-looking-to-the-right-2',
+                        'orange-monster-looking-to-the-left-1', 'orange-monster-looking-to-the-left-2',
+                        'orange-monster-looking-up-1', 'orange-monster-looking-up-2',
+                        'orange-monster-looking-down-1', 'orange-monster-looking-down-2'
+                    ]                   
 
 // all checked, they are right and full
 const verticalLines = [  // 1st line l to r
@@ -279,9 +319,6 @@ function switchFrames(keyCode, object, ids) {
     }
 };
 
-pacman.style.left = getComputedStyle(pacman).left;
-pacman.style.top = getComputedStyle(pacman).top;
-
 let id, pacmanDirectionId;
 window.addEventListener("keyup", (e) => {
     if(id) {
@@ -457,21 +494,6 @@ function f() {
 
 setInterval(f, 1000)
 
-const cyanGhost = document.querySelector('#cyan-monster-looking-to-the-right-1');
-cyanGhost.style.left = parseFloat(getComputedStyle(cyanGhost).left) + 'px';
-cyanGhost.style.top = parseFloat(getComputedStyle(cyanGhost).top) + 'px';
-cyanGhost.direction = 'down';
-
-const pinkGhost = document.querySelector('#pink-monster-looking-to-the-right-1');
-pinkGhost.style.left = parseFloat(getComputedStyle(pinkGhost).left) + 'px';
-pinkGhost.style.top = parseFloat(getComputedStyle(pinkGhost).top) + 'px';
-pinkGhost.direction = 'up';
-
-const orangeGhost = document.querySelector('#orange-monster-looking-to-the-right-1');
-orangeGhost.style.left = parseFloat(getComputedStyle(orangeGhost).left) + 'px';
-orangeGhost.style.top = parseFloat(getComputedStyle(orangeGhost).top) + 'px';
-orangeGhost.direction = 'down';
-
 function g(ghost) {
     if(parseFloat(ghost.style.top) === 112.5) {
         ghost.direction = 'down';
@@ -487,6 +509,18 @@ function g(ghost) {
         ghost.style.top = (parseFloat(ghost.style.top) + 0.5) + 'px';
     } 
 }
+
+function switchGhostFrames(ghost, ghostIds) {
+    if(ghost.direction === 'up') {
+        switchFrames(38, ghost, ghostIds);
+    } else if(ghost.direction === 'down') {
+        switchFrames(40, ghost, ghostIds);
+    }
+}
+
+setInterval(switchGhostFrames, 200, cyanGhost, cyanGhostIds);
+setInterval(switchGhostFrames, 200, pinkGhost, pinkGhostIds);
+setInterval(switchGhostFrames, 200, orangeGhost, orangeGhostIds);
 
 setInterval(g, 20, cyanGhost);
 setInterval(g, 20, pinkGhost);
