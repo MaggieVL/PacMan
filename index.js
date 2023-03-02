@@ -346,106 +346,94 @@ window.addEventListener("keyup", (e) => {
         pacmanDirectionId = null;
     }
 
-    const left = getComputedStyle(pacman).left;
-    const parsedLeft = parseInt(left); 
-    const topEl = getComputedStyle(pacman).top;
-    const parsedTop = parseInt(topEl);
-
     if(e.keyCode >= 37 && e.keyCode <= 40) {
-        const top = parseFloat(pacman.style.top);
-        const left = parseFloat(pacman.style.left);
+        pacman.parsedTopOnKeyup = parseFloat(pacman.style.top);
+        pacman.parsedLeftOnKeyup = parseFloat(pacman.style.left);
 
-        var currentVerticalLine = null, currentHorizontalLine = null;
         verticalLines.forEach((line) => {
-            if(left == line.left && line.startTop <= top && top <= line.endTop) {
-                currentVerticalLine = line;
+            if(pacman.parsedLeftOnKeyup == line.left && line.startTop <= pacman.parsedTopOnKeyup && pacman.parsedTopOnKeyup <= line.endTop) {
+                pacman.currentVerticalLine = line;
             }
         })
 
         horizontalLines.forEach((line) => {
-            if(top == line.top && line.startLeft <= left && left <= line.endLeft) {
-                currentHorizontalLine = line;
+            if(pacman.parsedTopOnKeyup == line.top && line.startLeft <= pacman.parsedLeftOnKeyup && pacman.parsedLeftOnKeyup <= line.endLeft) {
+                pacman.currentHorizontalLine = line;
             }
         })
 
-        let k = 0;
-        function moveOnce() { 
-            switch(e.keyCode) {
-                case 37: { // left
-                            if(currentHorizontalLine && 
-                                parseFloat(pacman.style.left) > currentHorizontalLine.startLeft) {
-                                    pacman.style.left = (parsedLeft - k) + 'px';
-                            }
-
-                            /*if(currentVerticalLine) {
-                                horizontalLines.forEach((line) => {
-                                    if(line.top - 1 < parseFloat(pacman.style.top) < line.top + 1 && 
-                                        line.endLeft < parseFloat(pacman.style.left)) {
-                                            pacman.style.top = line.top + 'px';
-                                            pacman.style.left = (parsedLeft - k) + 'px';
-                                    }
-                                })
-                            }*/
-                        } 
-                        break;
-
-                case 39: { // right
-                        if(currentHorizontalLine && parseFloat(pacman.style.left) < currentHorizontalLine.endLeft) { 
-                                pacman.style.left = (parsedLeft + k) + 'px'; 
-                            } 
-
-                            /*if(currentVerticalLine) {
-                                horizontalLines.forEach((line) => {
-                                    if(line.top - 1 < parseFloat(pacman.style.top) < line.top + 1 && line.startLeft > parseFloat(pacman.style.left)) {
-                                        pacman.style.top = line.top + 'px';
-                                        pacman.style.left = (parsedLeft + k) + 'px';
-                                    }
-                                })
-                            }*/
-                        } 
-                        break;
-
-                case 38: { // up
-                    if(currentVerticalLine && parseFloat(pacman.style.top) > currentVerticalLine.startTop) { 
-                                pacman.style.top = (parsedTop - k) + 'px'; 
-                            } 
-
-                        /*if(currentHorizontalLine) {
-                            verticalLines.forEach((line) => {
-                                if(line.left - 1 < parseFloat(pacman.style.left) < line.left + 1 && line.endTop < parseFloat(pacman.style.top)) {
-                                    pacman.style.top = (parsedTop - k) + 'px';
-                                    pacman.style.left = line.left + 'px';
-                                }
-                            })
-                        }*/
-                    }
-
-                        break; 
-
-                case 40: { // down
-                        if(currentVerticalLine && parseFloat(pacman.style.top) < currentVerticalLine.endTop) {
-                                pacman.style.top = (parsedTop + k) + 'px'; 
-                            }
-
-                            /*if(currentHorizontalLine) {
-                                verticalLines.forEach((line) => {
-                                    if(line.left - 1 < parseFloat(pacman.style.left) < line.left + 1 && line.startTop < parseFloat(pacman.style.top)) {
-                                        pacman.style.top = (parseFloat(pacman.style.top) + k ) + 'px';
-                                        pacman.style.left = line.left + 'px';
-                                    }
-                                })
-                            }*/
-                        } 
-                        break;
-
-            }
-            k += 0.5;
-        }
-
-        id = setInterval(moveOnce, 10); 
+        id = setInterval(moveOnce, 10, e.keyCode, pacman); 
         pacmanDirectionId = setInterval(switchFrames, 200, e.keyCode, pacman, pacmanIds)
     }
 })
+
+function moveOnce(keyCode, object) { 
+    const currentTop = parseFloat(object.style.top);
+    const currentLeft = parseFloat(object.style.left);
+
+    let k = 0.5;
+    switch(keyCode) {
+        case 37: { // left
+                    if(object.currentHorizontalLine && 
+                        currentLeft > object.currentHorizontalLine.startLeft) {
+                            object.style.left = (currentLeft - k) + 'px';
+                    } /*else if(object.currentVerticalLine) {
+                        horizontalLines.forEach((line) => {
+                            if(line.top - 1 < currentTop < line.top + 1 && 
+                                line.endLeft < currentLeft) {
+                                    object.style.top = line.top + 'px';
+                                    object.style.left = (currentLeft - k) + 'px';
+                            }
+                        })
+                    }*/
+                } 
+                break;
+
+        case 39: { // right
+                if(object.currentHorizontalLine && currentLeft < object.currentHorizontalLine.endLeft) { 
+                        object.style.left = (currentLeft + k) + 'px'; 
+                } /*else if(currentVerticalLine) {
+                        horizontalLines.forEach((line) => {
+                            if(line.top - 1 < parseFloat(pacman.style.top) < line.top + 1 && line.startLeft > parseFloat(pacman.style.left)) {
+                                pacman.style.top = line.top + 'px';
+                                pacman.style.left = (parsedLeft + k) + 'px';
+                            }
+                        })
+                    }*/
+                } 
+                break;
+
+        case 38: { // up
+                    if(object.currentVerticalLine && currentTop > object.currentVerticalLine.startTop) { 
+                        object.style.top = (currentTop - k) + 'px'; 
+                    } /*else if(object.currentHorizontalLine) {
+                    verticalLines.forEach((line) => {
+                        if(line.left - 1 < currentLeft < line.left + 1 && line.endTop < currentTop) {
+                            pacman.style.top = (currentTop - k) + 'px';
+                            pacman.style.left = line.left + 'px';
+                        }
+                    })
+                }*/
+            }
+
+                break; 
+
+        case 40: { // down
+                    if(object.currentVerticalLine && currentTop < object.currentVerticalLine.endTop) {
+                        object.style.top = (currentTop + k) + 'px'; //parsed
+                    } /*else if(object.currentHorizontalLine) {
+                        verticalLines.forEach((line) => {
+                            if(line.left - 1 < currentLeft < line.left + 1 && line.startTop < currentTop) {
+                                pacman.style.top = (currentTop + k ) + 'px';
+                                pacman.style.left = line.left + 'px';
+                            }
+                        })
+                    }*/
+                } 
+                break;
+
+    }
+}
 
 function toggleBetweenIds(object, id1, id2) {
     if (object.id == id1) {
