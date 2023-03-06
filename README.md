@@ -24,3 +24,5 @@
     * make the score go up every time he does so
   * make the red ghost chase Pacman in its own way - directly
   * make pacman explode when a ghost runs over him
+* Done
+  * fixed all the rest of the cases for the wall-identification tunnel bug
