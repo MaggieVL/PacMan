@@ -25,3 +25,5 @@
   * make the red ghost chase Pacman in its own way - directly
   * make pacman explode when a ghost runs over him
   * make Pacman move through the special tunnel
+* Done
+  * made Pacman move through the special tunnel
