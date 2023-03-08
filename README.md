@@ -24,3 +24,5 @@
   * make the ghosts recognise the walls
   * make the red ghost chase Pacman in its own way - directly
   * make pacman explode when a ghost runs over him
+* Done
+  * made pacman eat the coins
