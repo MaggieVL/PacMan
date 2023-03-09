@@ -57,20 +57,6 @@ const orangeGhostIds = [
                     
 const explodingPacmanIdBase = 'small-pacman-exploding-turned-upside-down-mouth-open-';
 
-//exploding pacman - to be used when pacman runs into a ghost
-/*let i = 0;
-function explode(object) {
-    if(i < 12) {
-        console.log(object.id)
-        object.id = explodingPacmanIdBase + i;
-        i++;
-    } else { 
-        i = 0;
-    }
-}
-
-setInterval(explode, 100, pacman);*/
-
 const verticalLines = [  // 1st line l to r
                         { // vertical up - 1
                             startTop: 12.5, 
@@ -528,3 +514,30 @@ setInterval(switchGhostFrames, 200, orangeGhost, orangeGhostIds);
 setInterval(g, 20, cyanGhost);
 setInterval(g, 20, pinkGhost);
 setInterval(g, 20, orangeGhost);
+
+//exploding pacman - to be used when pacman runs into a ghost
+let i = 0;
+let explosionId;
+function explode(object) {
+    if(i < 12) {
+        object.id = explodingPacmanIdBase + i;
+        i++;
+    } else { 
+        i = 0;
+        clearInterval(explosionId);
+    }
+}
+
+function overlap(el1, el2) {
+    const rect1 = el1.getBoundingClientRect();
+    const rect2 = el2.getBoundingClientRect();
+  
+    let overlap = rect1.top > rect2.bottom || rect1.right < rect2.left || 
+        rect1.bottom < rect2.top || rect1.left > rect2.right
+
+    return !overlap;
+}
+
+if(overlap(pacman, redGhost)) {
+    setInterval(explode, 100, pacman);
+}
