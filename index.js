@@ -4,6 +4,7 @@ const redGhost = document.querySelector('#red-monster-looking-up-1');
 const cyanGhost = document.querySelector('#cyan-monster-looking-up-1');
 const pinkGhost = document.querySelector('#pink-monster-looking-down-1');
 const orangeGhost = document.querySelector('#orange-monster-looking-up-1');
+const exampleOrangeGhost = document.querySelector('#orange-monster-for-explosion-example');
 
 pacman.style.left = getComputedStyle(pacman).left;
 pacman.style.top = getComputedStyle(pacman).top;
@@ -19,6 +20,9 @@ pinkGhost.direction = 'up';
 orangeGhost.style.left = getComputedStyle(orangeGhost).left;
 orangeGhost.style.top = getComputedStyle(orangeGhost).top;
 orangeGhost.direction = 'down';
+
+exampleOrangeGhost.style.left = getComputedStyle(exampleOrangeGhost).left;
+exampleOrangeGhost.style.top = getComputedStyle(exampleOrangeGhost).top;
 
 const pacmanIds = [
                     'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open',
@@ -320,8 +324,8 @@ function switchFrames(keyCode, object, ids) {
     }
 };
 
-let id, pacmanDirectionId;
-window.addEventListener("keyup", (e) => {
+let id, pacmanDirectionId, currentKeyCode;
+window.addEventListener("keydown", (e) => {
     if(id) {
         clearInterval(id);
         id = null;
@@ -333,91 +337,73 @@ window.addEventListener("keyup", (e) => {
     }
 
     if(e.keyCode >= 37 && e.keyCode <= 40) {
-        pacman.parsedTopOnKeyup = parseFloat(pacman.style.top);
-        pacman.parsedLeftOnKeyup = parseFloat(pacman.style.left);
-
-        verticalLines.forEach((line) => {
-            if(pacman.parsedLeftOnKeyup == line.left && line.startTop <= pacman.parsedTopOnKeyup && pacman.parsedTopOnKeyup <= line.endTop) {
-                pacman.currentVerticalLine = line;
-            }
-        })
-
-        horizontalLines.forEach((line) => {
-            if(pacman.parsedTopOnKeyup == line.top && line.startLeft <= pacman.parsedLeftOnKeyup && pacman.parsedLeftOnKeyup <= line.endLeft) {
-                pacman.currentHorizontalLine = line;
-            }
-        })
-
-        id = setInterval(moveOnce, 10, e.keyCode, pacman); 
+        currentKeyCode = e.keyCode;
+        id = setInterval(moveOnce, 10, pacman); 
         pacmanDirectionId = setInterval(switchFrames, 200, e.keyCode, pacman, pacmanIds)
     }
 })
 
-function moveOnce(keyCode, object) { 
+let explosionId;
+function moveOnce(object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
 
-    let k = 0.5;
-    switch(keyCode) {
-        case 37: { // left
-                    if(object.currentHorizontalLine && 
-                        currentLeft > object.currentHorizontalLine.startLeft) {
-                            object.style.left = (currentLeft - k) + 'px';
-                    } /*else if(object.currentVerticalLine) {
-                        horizontalLines.forEach((line) => {
-                            if(line.top - 1 < currentTop < line.top + 1 && 
-                                line.endLeft < currentLeft) {
-                                    object.style.top = line.top + 'px';
-                                    object.style.left = (currentLeft - k) + 'px';
-                            }
-                        })
-                    }*/
+    const objectCenterX = currentLeft + 7.5;
+    const objectCenterY = currentTop + 7.5;
+    const ghostY = parseFloat(exampleOrangeGhost.style.top);
+    const ghostX = parseFloat(exampleOrangeGhost.style.left);
+
+    if(objectCenterX === (ghostX + 7.5) && objectCenterY === (ghostY + 15) 
+        || objectCenterX === ghostX && objectCenterY === (ghostY + 7.5)
+        || objectCenterX === (ghostX + 7.5) && objectCenterY === ghostY
+        || objectCenterX === (ghostX + 15) && objectCenterY === (ghostY + 7.5)) {
+
+        clearInterval(explosionId);
+        clearInterval(pacmanDirectionId);
+        explosionId = setInterval(explode, 100, object);
+    }
+
+    // delete the current line when used - to do later
+    verticalLines.forEach((line) => {
+        if(currentLeft === line.left && line.startTop <= currentTop <= endTop) {
+            object.currentVerticalLine = line;
+        } 
+    })
+
+    horizontalLines.forEach((line) => {
+        if(currentTop === line.top && line.startLeft <= currentLeft <= line.endLeft) {
+            object.currentHorizontalLine = line;
+        }
+    })
+    /*console.log('object.currentHorizontalLine');
+    console.log(object.currentHorizontalLine);
+    console.log('object.currentVerticalLine');
+    console.log(object.currentVerticalLine);*/
+
+    console.log(keyCode);
+    let k = 0.1;
+    switch(currentKeyCode) {
+        case 37: { //left
+            console.log(currentKeyCode)
+            if(object.currentHorizontalLine) {
+                console.log('in if')
+                console.log('object.currentHorizontalLine')
+                console.log(object.currentHorizontalLine)
+                console.log(currentLeft)
+                if(object.currentHorizontalLine.startLeft < currentLeft) {
+                    console.log('in iffff')
+                    object.style.left = (currentLeft - k) + 'px';
                 } 
-                break;
+            } 
+        } break;
+        case 39: { //right
+        } break;
+        case 38: { //up 
 
-        case 39: { // right
-                if(object.currentHorizontalLine && currentLeft < object.currentHorizontalLine.endLeft) { 
-                        object.style.left = (currentLeft + k) + 'px'; 
-                } /*else if(currentVerticalLine) {
-                        horizontalLines.forEach((line) => {
-                            if(line.top - 1 < parseFloat(pacman.style.top) < line.top + 1 && line.startLeft > parseFloat(pacman.style.left)) {
-                                pacman.style.top = line.top + 'px';
-                                pacman.style.left = (parsedLeft + k) + 'px';
-                            }
-                        })
-                    }*/
-                } 
-                break;
+        } break;
+        case 40: { //down
 
-        case 38: { // up
-                    if(object.currentVerticalLine && currentTop > object.currentVerticalLine.startTop) { 
-                        object.style.top = (currentTop - k) + 'px'; 
-                    } /*else if(object.currentHorizontalLine) {
-                    verticalLines.forEach((line) => {
-                        if(line.left - 1 < currentLeft < line.left + 1 && line.endTop < currentTop) {
-                            pacman.style.top = (currentTop - k) + 'px';
-                            pacman.style.left = line.left + 'px';
-                        }
-                    })
-                }*/
-            }
-
-                break; 
-
-        case 40: { // down
-                    if(object.currentVerticalLine && currentTop < object.currentVerticalLine.endTop) {
-                        object.style.top = (currentTop + k) + 'px'; //parsed
-                    } /*else if(object.currentHorizontalLine) {
-                        verticalLines.forEach((line) => {
-                            if(line.left - 1 < currentLeft < line.left + 1 && line.startTop < currentTop) {
-                                pacman.style.top = (currentTop + k ) + 'px';
-                                pacman.style.left = line.left + 'px';
-                            }
-                        })
-                    }*/
-                } 
-                break;
-
+        } break;
     }
 }
 
@@ -516,28 +502,20 @@ setInterval(g, 20, pinkGhost);
 setInterval(g, 20, orangeGhost);
 
 //exploding pacman - to be used when pacman runs into a ghost
-let i = 0;
-let explosionId;
+let i = 1;
 function explode(object) {
-    if(i < 12) {
+    if(i <= 12) {
         object.id = explodingPacmanIdBase + i;
         i++;
-    } else { 
-        i = 0;
-        clearInterval(explosionId);
     }
 }
 
-function overlap(el1, el2) {
-    const rect1 = el1.getBoundingClientRect();
-    const rect2 = el2.getBoundingClientRect();
+/*function overlap(object1, object2) {
+    const rect1 = object1.getBoundingClientRect();
+    const rect2 = object2.getBoundingClientRect();
   
     let overlap = rect1.top > rect2.bottom || rect1.right < rect2.left || 
         rect1.bottom < rect2.top || rect1.left > rect2.right
 
     return !overlap;
-}
-
-if(overlap(pacman, redGhost)) {
-    setInterval(explode, 100, pacman);
-}
+}*/

@@ -364,6 +364,16 @@
     background: url(./Images/spritesheet.png) -568.3px -80.7px;
 }
 
+#orange-monster-for-explosion-example {
+    position: absolute;
+    z-index: 5;
+    top: 12.5px;
+    left: 12.5px;
+    width: 15px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -456.3px -112.7px;
+}
+
 #orange-monster-looking-to-the-right-1 { 
     position: absolute;
     z-index: 20;

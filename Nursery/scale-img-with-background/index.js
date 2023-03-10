@@ -1,10 +1,7 @@
 const pacman = document.querySelector('#small-pacman-heading-right');
-console.log("pacman: ")
-console.log(pacman);
 
 let id;
 window.addEventListener("keyup", (e) => {
-    console.log(e.keyCode)
 
     if(id) {
         clearInterval(id);
