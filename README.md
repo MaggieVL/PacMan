@@ -21,3 +21,5 @@
   * make the score go up every time pacman eats a coin
   * make the ghosts recognise the walls
   * make the red ghost chase Pacman in its own way - directly
+* Done
+  * worked on resetting the game when pacman dies (explodes)
