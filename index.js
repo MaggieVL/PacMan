@@ -8,6 +8,11 @@ const exampleOrangeGhost = document.querySelector('#orange-monster-for-explosion
 
 pacman.style.left = getComputedStyle(pacman).left;
 pacman.style.top = getComputedStyle(pacman).top;
+pacman.currentLine = {
+                        top: 188.5,
+                        startLeft: 52.5,
+                        endLeft: 172.5 
+                    }
 
 cyanGhost.style.left = getComputedStyle(cyanGhost).left;
 cyanGhost.style.top = getComputedStyle(cyanGhost).top;
@@ -324,7 +329,7 @@ function switchFrames(keyCode, object, ids) {
     }
 };
 
-let id, pacmanDirectionId, currentKeyCode;
+let id, pacmanDirectionId;
 window.addEventListener("keydown", (e) => {
     if(id) {
         clearInterval(id);
@@ -337,73 +342,186 @@ window.addEventListener("keydown", (e) => {
     }
 
     if(e.keyCode >= 37 && e.keyCode <= 40) {
-        currentKeyCode = e.keyCode;
-        id = setInterval(moveOnce, 10, pacman); 
+        id = setInterval(moveOnce, 10, e.keyCode, pacman);
         pacmanDirectionId = setInterval(switchFrames, 200, e.keyCode, pacman, pacmanIds)
     }
 })
 
-let explosionId;
-function moveOnce(object) { 
+function isVerticalLine(line) {
+    console.log(line);
+    if(line.hasOwnProperty('left')) {
+        return true;
+    }
+
+    return false;
+}
+
+function setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft) {
+    console.log(object.currentLine)
+    const objectIsOnAVerticalLine = isVerticalLine(object.currentLine);
+
+    if(objectIsOnAVerticalLine) {
+        horizontalLines.forEach((horizontalLine) => {
+            if(horizontalLine.top - 4.6 <= currentTop && currentTop <= horizontalLine.top + 4.6
+                && horizontalLine.startLeft <= currentLeft && currentLeft <= horizontalLine.endLeft) {
+                object.lineToPossiblyGetOn = horizontalLine;
+            } 
+        });
+    } else {
+        verticalLines.forEach((verticalLine) => {
+            if(verticalLine.left - 4.6 <= currentLeft && currentLeft <= verticalLine.left + 4.6
+                && verticalLine.startTop <= currentTop && currentTop <= verticalLine.endTop) {
+                object.lineToPossiblyGetOn = verticalLine;
+            } 
+        })
+    }
+}
+
+/*let emptyCoinSpace;
+emptyCoinSpace = document.createElement('div');
+emptyCoinSpace.setAttribute('left', `400px`);
+emptyCoinSpace.setAttribute('top', `100px`);
+emptyCoinSpace.setAttribute('position', 'absolute');
+emptyCoinSpace.setAttribute('z-index', 200);
+emptyCoinSpace.setAttribute('width', '3px');
+emptyCoinSpace.setAttribute('height', '3px');
+
+const lastElement = document.getElementById('orange-monster-looking-up-1');
+const bodyElement = document.getElementsByTagName('body')[0];
+bodyElement.appendChild(emptyCoinSpace);
+emptyCoinSpace.after(lastElement);*/
+
+const scoreHolder = document.querySelector('#score-holder');
+let timesMoved = 0.0, direction = 37, coinSum = 0.0;
+function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
 
-    const objectCenterX = currentLeft + 7.5;
-    const objectCenterY = currentTop + 7.5;
-    const ghostY = parseFloat(exampleOrangeGhost.style.top);
-    const ghostX = parseFloat(exampleOrangeGhost.style.left);
-
-    if(objectCenterX === (ghostX + 7.5) && objectCenterY === (ghostY + 15) 
-        || objectCenterX === ghostX && objectCenterY === (ghostY + 7.5)
-        || objectCenterX === (ghostX + 7.5) && objectCenterY === ghostY
-        || objectCenterX === (ghostX + 15) && objectCenterY === (ghostY + 7.5)) {
-
-        clearInterval(explosionId);
-        clearInterval(pacmanDirectionId);
-        explosionId = setInterval(explode, 100, object);
+    const k = 0.5;
+    if(keyCode == direction) {
+        timesMoved += k;
+    } else {
+        timesMoved = 0;
+        direction = keyCode;
     }
 
-    // delete the current line when used - to do later
-    verticalLines.forEach((line) => {
-        if(currentLeft === line.left && line.startTop <= currentTop <= endTop) {
-            object.currentVerticalLine = line;
-        } 
-    })
+    if(timesMoved == 7.5) {
+        coinSum++;
+        scoreHolder.innerHTML = '';
+        const content = document.createTextNode(coinSum + '')
+        scoreHolder.appendChild(content);
+        timesMoved = 0;
+    }
 
-    horizontalLines.forEach((line) => {
-        if(currentTop === line.top && line.startLeft <= currentLeft <= line.endLeft) {
-            object.currentHorizontalLine = line;
-        }
-    })
-    /*console.log('object.currentHorizontalLine');
-    console.log(object.currentHorizontalLine);
-    console.log('object.currentVerticalLine');
-    console.log(object.currentVerticalLine);*/
+    setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft);
+    currentLineIsVertical = isVerticalLine(object.currentLine);
 
-    console.log(keyCode);
-    let k = 0.1;
-    switch(currentKeyCode) {
-        case 37: { //left
-            console.log(currentKeyCode)
-            if(object.currentHorizontalLine) {
-                console.log('in if')
-                console.log('object.currentHorizontalLine')
-                console.log(object.currentHorizontalLine)
-                console.log(currentLeft)
-                if(object.currentHorizontalLine.startLeft < currentLeft) {
-                    console.log('in iffff')
-                    object.style.left = (currentLeft - k) + 'px';
+    let emptyCoinSpace = document.createElement('div');
+    emptyCoinSpace.className = 'empty-coin-space';
+    emptyCoinSpace.style.top = `${(currentTop + 6.0)}px`;
+    emptyCoinSpace.style.left = `${(currentLeft + 6.0)}px`;
+    const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
+    const parentElement = monsterExample.parentNode;
+    parentElement.insertBefore(emptyCoinSpace, monsterExample);
+
+    switch(keyCode) {
+        case 37: { // left
+                    if(currentTop === 116.5 && currentLeft === 8.5) {
+                        object.style.left = 214.5 + 'px';
+                        currentLine = {
+                                        top: 116.5, 
+                                        startLeft: 148.5, 
+                                        endLeft:  219.5
+                                    };
+                        object.lineToPossiblyGetOn = null;
+                    }
+
+                    // on a horizontal line
+                    if(!currentLineIsVertical
+                        && currentLeft > object.currentLine.startLeft) {
+                            object.style.left = (currentLeft - k) + 'px';
+                    }
+
+                    // on a vertical line
+                    if(currentLineIsVertical
+                        && object.lineToPossiblyGetOn
+                        && currentLeft > object.lineToPossiblyGetOn.startLeft) { 
+                            object.currentLine = object.lineToPossiblyGetOn;
+                            object.style.left = (currentLeft - k) + 'px';
+                            object.style.top = object.lineToPossiblyGetOn.top + 'px';
+                            object.lineToPossiblyGetOn = null;
+                    }
                 } 
-            } 
-        } break;
-        case 39: { //right
-        } break;
-        case 38: { //up 
+                break;
 
-        } break;
-        case 40: { //down
+        case 39: { // right
+                    if(currentTop === 116.5 && currentLeft === 214.5) {
+                        object.style.left = 23.5 + 'px';
+                        object.currentLine = { 
+                                                top: 116.5, 
+                                                startLeft: 8.5, 
+                                                endLeft:  76.5
+                                            };
+                        object.lineToPossiblyGetOn = null;
+                    }
 
-        } break;
+                    // on a horizontal line
+                    if(!currentLineIsVertical 
+                        && currentLeft < object.currentLine.endLeft) { 
+                            object.style.left = (currentLeft + k) + 'px'; 
+                    }
+
+                    // on a vertical line
+                    if(currentLineIsVertical
+                        && object.lineToPossiblyGetOn
+                        && currentLeft < object.lineToPossiblyGetOn.endLeft) { 
+                            object.currentLine = object.lineToPossiblyGetOn;
+                            object.style.left = (currentLeft + k) + 'px';
+                            object.style.top = object.lineToPossiblyGetOn.top + 'px';
+                            object.lineToPossiblyGetOn = null;
+                    }
+                } 
+                break;
+
+        case 38: { // up
+                    // on a vertical line
+                    if(currentLineIsVertical
+                        && currentTop > object.currentLine.startTop) { 
+                            object.style.top = (currentTop - k) + 'px'; 
+                    }
+
+                    // on a horizontal line
+                    if(!currentLineIsVertical
+                        && object.lineToPossiblyGetOn
+                        && currentTop > object.lineToPossiblyGetOn.startTop) { 
+                            object.currentLine = object.lineToPossiblyGetOn;
+                            object.style.left = object.lineToPossiblyGetOn.left + 'px';
+                            object.style.top = (currentTop - k) + 'px';
+                            object.lineToPossiblyGetOn = null;
+                    }
+            }
+
+                break; 
+
+        case 40: { // down
+                    // on a vertical line
+                    if(currentLineIsVertical
+                        && currentTop < object.currentLine.endTop) {
+                        object.style.top = (currentTop + k) + 'px';
+                    }
+
+                    // on a horizontal line
+                    if(!currentLineIsVertical
+                        && object.lineToPossiblyGetOn
+                        && currentTop < object.lineToPossiblyGetOn.endTop) { 
+                            object.currentLine = object.lineToPossiblyGetOn;
+                            object.style.left = object.lineToPossiblyGetOn.left + 'px';
+                            object.style.top = (currentTop + k) + 'px';
+                            object.lineToPossiblyGetOn = null;
+                    }
+                } 
+                break;
+
     }
 }
 
@@ -415,7 +533,7 @@ function toggleBetweenIds(object, id1, id2) {
     }
 }
 
-const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space');
+const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space-for-a-power-pellet');
 function toggleBetweenZIndices(object, zIndex1, zIndex2) {
     if(object.style.zIndex == zIndex1) {
         object.style.zIndex = zIndex2;

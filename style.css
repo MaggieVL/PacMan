@@ -6,6 +6,12 @@
     background: url(./Images/spritesheet.png) 0 0;
 }
 
+#score-holder { 
+    position: fixed;
+    top: 270px;
+    left: 180px;
+}
+
 #small-pacman-full-circle {
     position: absolute;
     z-index: 10;
@@ -176,11 +182,19 @@
     background: url(./Images/spritesheet.png) -568.3px -64.4px;
 }
 
-.empty-blue-space {
+.empty-blue-space-for-a-power-pellet {
     position: absolute;
     z-index: -10;
     width: 10px;
     height: 10px;
+    background: url(./Images/spritesheet.png) -250px -64px;
+}
+
+.empty-coin-space {
+    position: absolute;
+    z-index: 5;
+    width: 3px;
+    height: 3px;
     background: url(./Images/spritesheet.png) -250px -64px;
 }
 
