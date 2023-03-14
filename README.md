@@ -22,3 +22,5 @@
   * make the ghosts recognise the walls
   * make the red ghost chase Pacman in its own way - directly
   * reset the game when pacman explodes
+* Done
+  * displayed the score of coins eaten in a div below the labyrinth
