@@ -391,11 +391,27 @@ const bodyElement = document.getElementsByTagName('body')[0];
 bodyElement.appendChild(emptyCoinSpace);
 emptyCoinSpace.after(lastElement);*/
 
+let explosionId;
 const scoreHolder = document.querySelector('#score-holder');
 let timesMoved = 0.0, direction = 37, coinSum = 0.0;
 function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
+
+    const objectCenterX = currentLeft + 7.5;
+    const objectCenterY = currentTop + 7.5;
+    const ghostY = parseFloat(exampleOrangeGhost.style.top);
+    const ghostX = parseFloat(exampleOrangeGhost.style.left);
+
+    if(objectCenterX === (ghostX + 7.5) && objectCenterY === (ghostY + 15) 
+        || objectCenterX === ghostX && objectCenterY === (ghostY + 7.5)
+        || objectCenterX === (ghostX + 7.5) && objectCenterY === ghostY
+        || objectCenterX === (ghostX + 15) && objectCenterY === (ghostY + 7.5)) {
+
+            clearInterval(explosionId);
+            clearInterval(pacmanDirectionId);
+            explosionId = setInterval(explode, 100, object);
+    }
 
     const k = 0.5;
     if(keyCode == direction) {
