@@ -24,3 +24,5 @@
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
   * reset the game fully when pacman explodes
+* Done
+  * made the ghosts and pacman reset after pacman exploding

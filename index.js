@@ -1,3 +1,6 @@
+var cyanGhostInACageId, pinkGhostInACageId, orangeGhostInACageId;
+var cyanGhostFramesId, pinkGhostFramesId, orangeGhostFramesId;
+
 const pacman = document.querySelector('#small-pacman-full-circle');
 const redGhost = document.querySelector('#red-monster-looking-up-1');
 
@@ -13,6 +16,10 @@ pacman.currentLine = {
                         startLeft: 52.5,
                         endLeft: 172.5 
                     }
+pacman.startPosition = {
+                         top: 188.5,
+                         left: 112.5
+                        }
 
 cyanGhost.style.left = getComputedStyle(cyanGhost).left;
 cyanGhost.style.top = getComputedStyle(cyanGhost).top;
@@ -321,6 +328,7 @@ const horizontalLines = [
 ]
 
 function switchFrames(keyCode, object, ids) {
+    console.log('in switch frames')
     switch(keyCode) {
         case 37: { toggleBetweenIds(object, ids[0], ids[1]);} break; //left
         case 39: { toggleBetweenIds(object, ids[2], ids[3]);} break; //right
@@ -348,7 +356,6 @@ window.addEventListener("keydown", (e) => {
 })
 
 function isVerticalLine(line) {
-    console.log(line);
     if(line.hasOwnProperty('left')) {
         return true;
     }
@@ -357,7 +364,6 @@ function isVerticalLine(line) {
 }
 
 function setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft) {
-    console.log(object.currentLine)
     const objectIsOnAVerticalLine = isVerticalLine(object.currentLine);
 
     if(objectIsOnAVerticalLine) {
@@ -398,6 +404,7 @@ function moveOnce(keyCode, object) {
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
 
+    // pacman explosion
     const objectCenterX = currentLeft + 7.5;
     const objectCenterY = currentTop + 7.5;
     const ghostY = parseFloat(exampleOrangeGhost.style.top);
@@ -408,11 +415,35 @@ function moveOnce(keyCode, object) {
         || objectCenterX === (ghostX + 7.5) && objectCenterY === ghostY
         || objectCenterX === (ghostX + 15) && objectCenterY === (ghostY + 7.5)) {
 
-            clearInterval(explosionId);
+            clearInterval(cyanGhostInACageId);
+            clearInterval(pinkGhostInACageId);
+            clearInterval(orangeGhostInACageId); 
+            clearInterval(cyanGhostFramesId);
+            clearInterval(pinkGhostFramesId);
+            clearInterval(orangeGhostFramesId);
             clearInterval(pacmanDirectionId);
+            clearInterval(id);
+
             explosionId = setInterval(explode, 100, object);
+
+            setTimeout(() => {
+                clearInterval(explosionId);
+
+                cyanGhostFramesId = setInterval(switchGhostFrames, 200, cyanGhost, cyanGhostIds);
+                pinkGhostFramesId = setInterval(switchGhostFrames, 200, pinkGhost, pinkGhostIds);
+                orangeGhostFramesId = setInterval(switchGhostFrames, 200, orangeGhost, orangeGhostIds);
+
+                cyanGhostInACageId = setInterval(moveGhostUpAndDown, 20, cyanGhost);
+                pinkGhostInACageId = setInterval(moveGhostUpAndDown, 20, pinkGhost);
+                orangeGhostInACageId = setInterval(moveGhostUpAndDown, 20, orangeGhost);
+
+                object.style.top = object.startPosition.top + 'px';
+                object.style.left = object.startPosition.left + 'px';
+                object.id = 'small-pacman-full-circle';
+            }, 2000);
     }
 
+    // coin counting
     const k = 0.5;
     if(keyCode == direction) {
         timesMoved += k;
@@ -569,7 +600,7 @@ function getRandomInt(min, max) {
 }
 
 let redGhostId, redGhostDirectionId;
-function f() {
+function moveRedGhost() {
     if(redGhostId) {
         clearInterval(redGhostId);
         redGhostId = null;
@@ -601,9 +632,9 @@ function f() {
     redGhostDirectionId = setInterval(switchFrames, 200, number, redGhost, redGhostIds)
 }
 
-setInterval(f, 1000)
+setInterval(moveRedGhost, 1000)
 
-function g(ghost) {
+function moveGhostUpAndDown(ghost) {
     if(parseFloat(ghost.style.top) === 112.5) {
         ghost.direction = 'down';
 
@@ -627,29 +658,19 @@ function switchGhostFrames(ghost, ghostIds) {
     }
 }
 
-setInterval(switchGhostFrames, 200, cyanGhost, cyanGhostIds);
-setInterval(switchGhostFrames, 200, pinkGhost, pinkGhostIds);
-setInterval(switchGhostFrames, 200, orangeGhost, orangeGhostIds);
+cyanGhostFramesId = setInterval(switchGhostFrames, 200, cyanGhost, cyanGhostIds);
+pinkGhostFramesId = setInterval(switchGhostFrames, 200, pinkGhost, pinkGhostIds);
+orangeGhostFramesId = setInterval(switchGhostFrames, 200, orangeGhost, orangeGhostIds);
 
-setInterval(g, 20, cyanGhost);
-setInterval(g, 20, pinkGhost);
-setInterval(g, 20, orangeGhost);
+cyanGhostInACageId = setInterval(moveGhostUpAndDown, 20, cyanGhost);
+pinkGhostInACageId = setInterval(moveGhostUpAndDown, 20, pinkGhost);
+orangeGhostInACageId = setInterval(moveGhostUpAndDown, 20, orangeGhost);
 
-//exploding pacman - to be used when pacman runs into a ghost
+// exploding pacman - used when pacman runs into a ghost
 let i = 1;
 function explode(object) {
-    if(i <= 12) {
+    if(i <= 11) {
         object.id = explodingPacmanIdBase + i;
         i++;
     }
 }
-
-/*function overlap(object1, object2) {
-    const rect1 = object1.getBoundingClientRect();
-    const rect2 = object2.getBoundingClientRect();
-  
-    let overlap = rect1.top > rect2.bottom || rect1.right < rect2.left || 
-        rect1.bottom < rect2.top || rect1.left > rect2.right
-
-    return !overlap;
-}*/
