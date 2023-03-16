@@ -23,3 +23,5 @@
   * make the red ghost chase Pacman in its own way - directly
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
+* Done
+  * the coin-eating needs to be optimised - when pacman has already eaten too many coins, he progressively starts moving and eating more slowly, so i placed the new blank spaces less often, next is making pacman move right through them and not place spaces in between 

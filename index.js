@@ -328,7 +328,6 @@ const horizontalLines = [
 ]
 
 function switchFrames(keyCode, object, ids) {
-    console.log('in switch frames')
     switch(keyCode) {
         case 37: { toggleBetweenIds(object, ids[0], ids[1]);} break; //left
         case 39: { toggleBetweenIds(object, ids[2], ids[3]);} break; //right
@@ -399,7 +398,7 @@ emptyCoinSpace.after(lastElement);*/
 
 let explosionId;
 const scoreHolder = document.querySelector('#score-holder');
-let timesMoved = 0.0, direction = 37, coinSum = 0.0;
+let timesMoved = 0.0, direction = 37, coinSum = 0.0, timesMovedForCoins = 0.0;
 function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
@@ -460,16 +459,19 @@ function moveOnce(keyCode, object) {
         timesMoved = 0;
     }
 
+    if(timesMovedForCoins == 6) {
+        let emptyCoinSpace = document.createElement('div');
+        emptyCoinSpace.className = 'empty-coin-space';
+        emptyCoinSpace.style.top = `${(currentTop + 6.0)}px`;
+        emptyCoinSpace.style.left = `${(currentLeft + 6.0)}px`;
+        const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
+        const parentElement = monsterExample.parentNode;
+        parentElement.insertBefore(emptyCoinSpace, monsterExample);
+        timesMovedForCoins = 0;
+    }
+
     setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft);
     currentLineIsVertical = isVerticalLine(object.currentLine);
-
-    let emptyCoinSpace = document.createElement('div');
-    emptyCoinSpace.className = 'empty-coin-space';
-    emptyCoinSpace.style.top = `${(currentTop + 6.0)}px`;
-    emptyCoinSpace.style.left = `${(currentLeft + 6.0)}px`;
-    const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
-    const parentElement = monsterExample.parentNode;
-    parentElement.insertBefore(emptyCoinSpace, monsterExample);
 
     switch(keyCode) {
         case 37: { // left
@@ -568,8 +570,8 @@ function moveOnce(keyCode, object) {
                     }
                 } 
                 break;
-
     }
+    timesMovedForCoins++;
 }
 
 function toggleBetweenIds(object, id1, id2) {
