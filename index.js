@@ -206,126 +206,149 @@ const verticalLines = [  // 1st line l to r
                     ]
 
 const horizontalLines = [
-// first line 
-// left up 1 - horizontal
-{ 
-    top: 12.5, 
-    startLeft: 12.5, 
-    endLeft: 100.5 
-},
-{  // right up 1 - horizontal
-    top: 12.5, 
-    startLeft: 124.5,  
-    endLeft: 212.5 
-},
-//second line 
-{  // full line up 2 - horizontal
-    top: 44.5, 
-    startLeft: 12.5, 
-    endLeft: 212.5 
-}, 
-// 3rd line
-{ // left line up 3 - horizontal
-    top: 68.5, 
-    startLeft: 12.5, 
-    endLeft: 52.5
-},
-{ // middle left line up 3 - horizontal
-    top: 68.5, 
-    startLeft: 76.5, 
-    endLeft: 100.5 
-},
-{ // middle right line up 3 - horizontal
-    top: 68.5, 
-    startLeft: 124.5, 
-    endLeft: 148.5 
-},
-{ // right line up 3 - horizontal
-    top: 68.5, 
-    startLeft: 172.5, 
-    endLeft: 212.5
-}, 
-// 4th line
-{ // line above the cage - horizontal
-    top: 92.5,
-    startLeft: 76.5,
-    endLeft: 148.5,
-},
-// 5th line
-//this is the middle line that is specific, may be get it out for now
-// instead of it, visualise only the part of it that is fully in the labyrinth
-{ // middle line left 0 - horizontal
-    top: 116.5, 
-    startLeft: 8.5, 
-    endLeft:  76.5
-}, 
-{ // middle line right 0 - horizontal
-    top: 116.5, 
-    startLeft: 148.5, 
-    endLeft:  219.5
-},
-// 6th line
-// line under the cage
-{
-    top: 140.5,
-    startLeft: 76.5,
-    endLeft: 148.5,
-},
-// 7th line
-{ // left line down 1 - horizontal
-    top: 164.5, 
-    startLeft: 12.5, 
-    endLeft: 100.5 
-}, 
-{ // right line down 1 - horizontal
-    top: 164.5, 
-    startLeft: 124.5, 
-    endLeft: 212.5
-},
-// 8th line
-{ // left line down 2 - horizontal
-    top: 188.5, 
-    startLeft: 12.5, 
-    endLeft: 28.5  
-},
-{ // middle line down 2 - horizontal
-    top: 188.5, 
-    startLeft: 52.5, 
-    endLeft: 172.5
-}, 
-{ // right line down 2 - horizontal
-    top: 188.5, 
-    startLeft: 196.5, 
-    endLeft: 212.5
-},
-// 9th line
-{ // right line down 3 - horizontal
-    top: 212.5, 
-    startLeft: 12.5, 
-    endLeft: 52.5
-},
-{ // right middle line down 3 - horizontal
-    top: 212.5, 
-    startLeft: 76.5, 
-    endLeft: 100.5
-}, 
-{ // left middle line down 3 - horizontal
-    top: 212.5, 
-    startLeft: 124.5, 
-    endLeft: 148.5
-}, 
-{ // right line down 3 - horizontal
-    top: 212.5, 
-    startLeft: 172.5, 
-    endLeft: 212.5
-},
-// 10th line
-{ // full line down 4 - horizontal  
-    top: 236.5, 
-    startLeft: 12.5, 
-    endLeft: 212.5
-},                  
-]
+                            // first line 
+                            // left up 1 - horizontal
+                            { 
+                                top: 12.5, 
+                                startLeft: 12.5, 
+                                endLeft: 100.5 
+                            },
+                            {  // right up 1 - horizontal
+                                top: 12.5, 
+                                startLeft: 124.5,  
+                                endLeft: 212.5 
+                            },
+                            //second line 
+                            {  // full line up 2 - horizontal
+                                top: 44.5, 
+                                startLeft: 12.5, 
+                                endLeft: 212.5 
+                            }, 
+                            // 3rd line
+                            { // left line up 3 - horizontal
+                                top: 68.5, 
+                                startLeft: 12.5, 
+                                endLeft: 52.5
+                            },
+                            { // middle left line up 3 - horizontal
+                                top: 68.5, 
+                                startLeft: 76.5, 
+                                endLeft: 100.5 
+                            },
+                            { // middle right line up 3 - horizontal
+                                top: 68.5, 
+                                startLeft: 124.5, 
+                                endLeft: 148.5 
+                            },
+                            { // right line up 3 - horizontal
+                                top: 68.5, 
+                                startLeft: 172.5, 
+                                endLeft: 212.5
+                            }, 
+                            // 4th line
+                            { // line above the cage - horizontal
+                                top: 92.5,
+                                startLeft: 76.5,
+                                endLeft: 148.5,
+                            },
+                            // 5th line
+                            //this is the middle line that is specific, may be get it out for now
+                            // instead of it, visualise only the part of it that is fully in the labyrinth
+                            { // middle line left 0 - horizontal
+                                top: 116.5, 
+                                startLeft: 8.5, 
+                                endLeft:  76.5
+                            }, 
+                            { // middle line right 0 - horizontal
+                                top: 116.5, 
+                                startLeft: 148.5, 
+                                endLeft:  219.5
+                            },
+                            // 6th line
+                            // line under the cage
+                            {
+                                top: 140.5,
+                                startLeft: 76.5,
+                                endLeft: 148.5,
+                            },
+                            // 7th line
+                            { // left line down 1 - horizontal
+                                top: 164.5, 
+                                startLeft: 12.5, 
+                                endLeft: 100.5 
+                            }, 
+                            { // right line down 1 - horizontal
+                                top: 164.5, 
+                                startLeft: 124.5, 
+                                endLeft: 212.5
+                            },
+                            // 8th line
+                            { // left line down 2 - horizontal
+                                top: 188.5, 
+                                startLeft: 12.5, 
+                                endLeft: 28.5  
+                            },
+                            { // middle line down 2 - horizontal
+                                top: 188.5, 
+                                startLeft: 52.5, 
+                                endLeft: 172.5
+                            }, 
+                            { // right line down 2 - horizontal
+                                top: 188.5, 
+                                startLeft: 196.5, 
+                                endLeft: 212.5
+                            },
+                            // 9th line
+                            { // right line down 3 - horizontal
+                                top: 212.5, 
+                                startLeft: 12.5, 
+                                endLeft: 52.5
+                            },
+                            { // right middle line down 3 - horizontal
+                                top: 212.5, 
+                                startLeft: 76.5, 
+                                endLeft: 100.5
+                            }, 
+                            { // left middle line down 3 - horizontal
+                                top: 212.5, 
+                                startLeft: 124.5, 
+                                endLeft: 148.5
+                            }, 
+                            { // right line down 3 - horizontal
+                                top: 212.5, 
+                                startLeft: 172.5, 
+                                endLeft: 212.5
+                            },
+                            // 10th line
+                            { // full line down 4 - horizontal  
+                                top: 236.5, 
+                                startLeft: 12.5, 
+                                endLeft: 212.5
+                            },                  
+];
+
+const offset = 6;
+const coinsCoordinatesHorizontal = horizontalLines.map((line) => {
+   return { 
+            lefts: splitInterval(line.startLeft + offset, line.endLeft + offset, 8),
+            top: line.top + offset,
+        }
+});
+
+const coinsCoordinatesVertical = verticalLines.map((line) => {
+   return { 
+            left: line.left + offset, 
+            tops: splitInterval(line.startTop + offset, line.endTop + offset, 8)
+        }
+});
+
+function splitInterval(startNum, endNum, interval) {
+    const res = [];
+    for(let i = startNum; i <= endNum; i+= interval) {
+        res.push(i);
+    }
+    return res;
+}
 
 function switchFrames(keyCode, object, ids) {
     switch(keyCode) {
@@ -382,26 +405,14 @@ function setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft) {
     }
 }
 
-/*let emptyCoinSpace;
-emptyCoinSpace = document.createElement('div');
-emptyCoinSpace.setAttribute('left', `400px`);
-emptyCoinSpace.setAttribute('top', `100px`);
-emptyCoinSpace.setAttribute('position', 'absolute');
-emptyCoinSpace.setAttribute('z-index', 200);
-emptyCoinSpace.setAttribute('width', '3px');
-emptyCoinSpace.setAttribute('height', '3px');
-
-const lastElement = document.getElementById('orange-monster-looking-up-1');
-const bodyElement = document.getElementsByTagName('body')[0];
-bodyElement.appendChild(emptyCoinSpace);
-emptyCoinSpace.after(lastElement);*/
-
 let explosionId;
 const scoreHolder = document.querySelector('#score-holder');
-let timesMoved = 0.0, direction = 37, coinSum = 0.0, timesMovedForCoins = 0.0;
+let timesMoved = 0.0, direction = 37, coinSum = 0.0;
 function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
+    const emptyCoinSpaceTop = currentTop + 6.0;
+    const emptyCoinSpaceLeft = currentLeft + 6.0;
 
     // pacman explosion
     const objectCenterX = currentLeft + 7.5;
@@ -451,23 +462,31 @@ function moveOnce(keyCode, object) {
         direction = keyCode;
     }
 
-    if(timesMoved == 7.5) {
-        coinSum++;
-        scoreHolder.innerHTML = '';
-        const content = document.createTextNode(coinSum + '')
-        scoreHolder.appendChild(content);
-        timesMoved = 0;
-    }
+    const allBlankSpaces = Array.from(document.querySelectorAll('.empty-coin-space'));
+    const filteredBlankSpaces = allBlankSpaces.filter((blankSpace) => {
+        const top = parseFloat(blankSpace.style.top);
+        const left = parseFloat(blankSpace.style.left);
 
-    if(timesMovedForCoins == 6) {
+        if(top === emptyCoinSpaceTop && left === emptyCoinSpaceLeft) {
+            return true;
+        }
+
+        return false;
+    })
+
+    const coinSum = allBlankSpaces.length;
+    scoreHolder.innerHTML = '';
+    const content = document.createTextNode(coinSum + '')
+    scoreHolder.appendChild(content);
+
+    if(filteredBlankSpaces.length === 0 && areCoinCoordinates(emptyCoinSpaceTop, emptyCoinSpaceLeft)) {
         let emptyCoinSpace = document.createElement('div');
         emptyCoinSpace.className = 'empty-coin-space';
-        emptyCoinSpace.style.top = `${(currentTop + 6.0)}px`;
-        emptyCoinSpace.style.left = `${(currentLeft + 6.0)}px`;
+        emptyCoinSpace.style.top = emptyCoinSpaceTop + 'px';
+        emptyCoinSpace.style.left = emptyCoinSpaceLeft + 'px';
         const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
         const parentElement = monsterExample.parentNode;
         parentElement.insertBefore(emptyCoinSpace, monsterExample);
-        timesMovedForCoins = 0;
     }
 
     setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft);
@@ -571,7 +590,34 @@ function moveOnce(keyCode, object) {
                 } 
                 break;
     }
-    timesMovedForCoins++;
+}
+
+function areCoinCoordinates(top, left) {
+    for(let i = 0; i < coinsCoordinatesHorizontal.length; i++) {
+        const leftCheck = coinsCoordinatesHorizontal[i].lefts.filter((leftCoord) => { 
+            if(leftCoord === left) {
+                return true;
+            } 
+            return false;
+        })
+
+        if(leftCheck.length > 0 && top === coinsCoordinatesHorizontal[i].top) {
+            return true;
+        }
+    }
+
+    for(let j = 0; j < coinsCoordinatesVertical.length; j++) {
+        const topCheck = coinsCoordinatesVertical[j].tops.filter((topCoord) => {
+            if(topCoord === top) {
+                return true;
+            }
+            return false;
+        });
+
+        if(topCheck.length > 0 && left === coinsCoordinatesVertical[j].left) {
+            return true;
+        }
+    }
 }
 
 function toggleBetweenIds(object, id1, id2) {

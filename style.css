@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+}
+
 #full-labyrinth { 
     position: fixed;
     z-index: 0;
@@ -192,6 +196,8 @@
 
 .empty-coin-space {
     position: absolute;
+    top: 20px;
+    left: 20px;
     z-index: 5;
     width: 3px;
     height: 3px;

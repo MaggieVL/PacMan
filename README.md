@@ -24,3 +24,5 @@
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
   * optimise the coin-eating further
+* Done 
+  * optimised pacman movement
