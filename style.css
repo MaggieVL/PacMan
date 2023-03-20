@@ -2,11 +2,20 @@ body {
     background-color: black;
 }
 
+.pacman-life {
+    position: fixed;
+    top: 260px;
+    left: 12.5px;
+    width: 16px;
+    height: 15px;
+    background: url(./Images/spritesheet.png) -472px -16px;
+}
+
 #full-labyrinth { 
     position: fixed;
     z-index: 0;
     width: 227px;
-    height: 251px;
+    height: 248px;
     background: url(./Images/spritesheet.png) 0 0;
 }
 
@@ -188,7 +197,7 @@ body {
 
 .empty-blue-space-for-a-power-pellet {
     position: absolute;
-    z-index: -10;
+    z-index: 5;
     width: 10px;
     height: 10px;
     background: url(./Images/spritesheet.png) -250px -64px;

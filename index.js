@@ -9,6 +9,8 @@ const pinkGhost = document.querySelector('#pink-monster-looking-down-1');
 const orangeGhost = document.querySelector('#orange-monster-looking-up-1');
 const exampleOrangeGhost = document.querySelector('#orange-monster-for-explosion-example');
 
+const scoreHolder = document.querySelector('#score-holder');
+
 pacman.style.left = getComputedStyle(pacman).left;
 pacman.style.top = getComputedStyle(pacman).top;
 pacman.currentLine = {
@@ -35,6 +37,8 @@ orangeGhost.direction = 'down';
 
 exampleOrangeGhost.style.left = getComputedStyle(exampleOrangeGhost).left;
 exampleOrangeGhost.style.top = getComputedStyle(exampleOrangeGhost).top;
+
+const explodingPacmanIdBase = 'small-pacman-exploding-turned-upside-down-mouth-open-';
 
 const pacmanIds = [
                     'small-pacman-turned-left-mouth-wide-open', 'small-pacman-turned-left-mouth-slightly-open',
@@ -70,8 +74,39 @@ const orangeGhostIds = [
                         'orange-monster-looking-up-1', 'orange-monster-looking-up-2',
                         'orange-monster-looking-down-1', 'orange-monster-looking-down-2'
                     ] 
-                    
-const explodingPacmanIdBase = 'small-pacman-exploding-turned-upside-down-mouth-open-';
+
+const pacmanLifeFirst = document.querySelector('.pacman-life');
+const pacmanLife = document.createElement('div');
+pacmanLife.className = 'pacman-life';
+pacmanLife.style.left = (parseFloat(getComputedStyle(pacmanLifeFirst).left) + 17) + 'px';
+const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
+const parentElement = monsterExample.parentNode;
+parentElement.insertBefore(pacmanLife, scoreHolder);
+
+const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space-for-a-power-pellet');
+emptyBlueSpaces.forEach((space) => {
+    let styles = getComputedStyle(space);
+    space.style.top = styles.top;
+    space.style.left = styles.left;
+    space.style.zIndex = styles.zIndex;
+})
+
+const offset = 6;
+
+function arePowerPelletCoordinates(top, left, coordinates) {
+    const length = coordinates.length;
+
+    for(let i = 0; i < length; i++) {
+        let singleCoordinate = coordinates[i];
+        let powerPelletTop = parseFloat(getComputedStyle(singleCoordinate).top);
+        let powerPelletLeft = parseFloat(getComputedStyle(singleCoordinate).left);
+
+        if(top - 3.5 === powerPelletTop && left - 3.5 === powerPelletLeft) {
+            return [powerPelletTop, powerPelletLeft];
+        }
+    }
+    return undefined;
+}
 
 const verticalLines = [  // 1st line l to r
                         { // vertical up - 1
@@ -327,7 +362,6 @@ const horizontalLines = [
                             },                  
 ];
 
-const offset = 6;
 const coinsCoordinatesHorizontal = horizontalLines.map((line) => {
    return { 
             lefts: splitInterval(line.startLeft + offset, line.endLeft + offset, 8),
@@ -358,6 +392,11 @@ function switchFrames(keyCode, object, ids) {
         case 40: { toggleBetweenIds(object, ids[6], ids[7]);} break; //down
     }
 };
+
+let pelletUpLeftId = setInterval(switchPelletVisibility, 1, emptyBlueSpaces[0]);
+let pelletUpRightId = setInterval(switchPelletVisibility, 1, emptyBlueSpaces[1]);
+let pelletDownLeftId = setInterval(switchPelletVisibility, 1, emptyBlueSpaces[2]);
+let pelletDownRightId = setInterval(switchPelletVisibility, 1, emptyBlueSpaces[3]);
 
 let id, pacmanDirectionId;
 window.addEventListener("keydown", (e) => {
@@ -406,7 +445,6 @@ function setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft) {
 }
 
 let explosionId;
-const scoreHolder = document.querySelector('#score-holder');
 let timesMoved = 0.0, direction = 37, coinSum = 0.0;
 function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
@@ -438,6 +476,11 @@ function moveOnce(keyCode, object) {
 
             setTimeout(() => {
                 clearInterval(explosionId);
+
+                const allPacmanLives  = document.querySelectorAll('.pacman-life');
+                if(allPacmanLives.length > 0) {
+                    allPacmanLives[allPacmanLives.length - 1].remove();
+                }
 
                 cyanGhostFramesId = setInterval(switchGhostFrames, 200, cyanGhost, cyanGhostIds);
                 pinkGhostFramesId = setInterval(switchGhostFrames, 200, pinkGhost, pinkGhostIds);
@@ -474,9 +517,10 @@ function moveOnce(keyCode, object) {
         return false;
     })
 
-    const coinSum = allBlankSpaces.length;
+    const coinSum = allBlankSpaces.length * 10;
     scoreHolder.innerHTML = '';
-    const content = document.createTextNode(coinSum + '')
+    scoreHolder.style.color = 'white';
+    const content = document.createTextNode(coinSum + '');
     scoreHolder.appendChild(content);
 
     if(filteredBlankSpaces.length === 0 && areCoinCoordinates(emptyCoinSpaceTop, emptyCoinSpaceLeft)) {
@@ -487,6 +531,26 @@ function moveOnce(keyCode, object) {
         const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
         const parentElement = monsterExample.parentNode;
         parentElement.insertBefore(emptyCoinSpace, monsterExample);
+    }
+
+    let currentPelletCoords = arePowerPelletCoordinates(emptyCoinSpaceTop, emptyCoinSpaceLeft, emptyBlueSpaces)
+    if(currentPelletCoords) {
+        const newZIndex = 5;
+        for(let i = 0; i < emptyBlueSpaces.length; i++) {
+            if(currentPelletCoords[0] === 31 && currentPelletCoords[1] === 15) {
+                clearInterval(pelletUpLeftId);
+                emptyBlueSpaces[i].style.zIndex = newZIndex;
+            } else if(currentPelletCoords[0] === 31 && currentPelletCoords[1] === 215) {
+                clearInterval(pelletUpRightId);
+                emptyBlueSpaces[i].style.zIndex = newZIndex;
+            } else if(currentPelletCoords[0] === 191 && currentPelletCoords[1] === 15) {
+                clearInterval(pelletDownLeftId);
+                emptyBlueSpaces[i].style.zIndex = newZIndex;
+            } else if(currentPelletCoords[0] === 191 && currentPelletCoords[1] === 215) {
+                clearInterval(pelletDownRightId);
+                emptyBlueSpaces[i].style.zIndex = newZIndex;
+            }
+        }
     }
 
     setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft);
@@ -593,6 +657,10 @@ function moveOnce(keyCode, object) {
 }
 
 function areCoinCoordinates(top, left) {
+    if(arePowerPelletCoordinates(top, left, emptyBlueSpaces)) {
+        return false;
+    }
+
     for(let i = 0; i < coinsCoordinatesHorizontal.length; i++) {
         const leftCheck = coinsCoordinatesHorizontal[i].lefts.filter((leftCoord) => { 
             if(leftCoord === left) {
@@ -628,7 +696,6 @@ function toggleBetweenIds(object, id1, id2) {
     }
 }
 
-const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space-for-a-power-pellet');
 function toggleBetweenZIndices(object, zIndex1, zIndex2) {
     if(object.style.zIndex == zIndex1) {
         object.style.zIndex = zIndex2;
@@ -637,11 +704,9 @@ function toggleBetweenZIndices(object, zIndex1, zIndex2) {
     }
 }
 
-function switchPelletVisibility() {
-    emptyBlueSpaces.forEach((element) =>  toggleBetweenZIndices(element, -5, 5))
+function switchPelletVisibility(element) {
+    toggleBetweenZIndices(element, -5, 5);
 }
-
-setInterval(switchPelletVisibility)
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);

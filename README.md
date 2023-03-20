@@ -24,3 +24,6 @@
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
   * make pacman lose lives after exploding (having been eaten)
+* Done
+  * the power pellets could not be eaten and there was a bug - a small coin empty space showed on it - I made pacman eat the whole pellet and removed that small space
+  * made pacman lose lives when eaten
