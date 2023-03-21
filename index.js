@@ -9,7 +9,9 @@ const pinkGhost = document.querySelector('#pink-monster-looking-down-1');
 const orangeGhost = document.querySelector('#orange-monster-looking-up-1');
 const exampleOrangeGhost = document.querySelector('#orange-monster-for-explosion-example');
 
-const scoreHolder = document.querySelector('#score-holder');
+const pacmanLivesHolder = document.querySelector('#pacman-lives-holder');
+const scoreHolder = document.createElement('div');
+scoreHolder.id = 'score-holder';
 
 pacman.style.left = getComputedStyle(pacman).left;
 pacman.style.top = getComputedStyle(pacman).top;
@@ -81,7 +83,7 @@ pacmanLife.className = 'pacman-life';
 pacmanLife.style.left = (parseFloat(getComputedStyle(pacmanLifeFirst).left) + 17) + 'px';
 const monsterExample = document.querySelector('#orange-monster-for-explosion-example');
 const parentElement = monsterExample.parentNode;
-parentElement.insertBefore(pacmanLife, scoreHolder);
+parentElement.insertBefore(pacmanLife, pacmanLivesHolder);
 
 const emptyBlueSpaces = document.querySelectorAll('.empty-blue-space-for-a-power-pellet');
 emptyBlueSpaces.forEach((space) => {
@@ -444,8 +446,24 @@ function setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft) {
     }
 }
 
+function appendNewImageDigits(number) {
+    // empty scoreholder
+    scoreHolder.innerHTML = '';
+    const scoreIdBase = 'score-digit-';
+    const digits = number.toString().split('');
+    let width = 9.2, i = 0;
+    digits.forEach((digit) => { 
+        let digitDiv = document.createElement('div');
+        digitDiv.setAttribute("id", scoreIdBase + digit);
+        digitDiv.style.left = parseFloat(getComputedStyle(scoreHolder).left) + i * width + 'px';
+        console.log(digitDiv.style.left);
+        scoreHolder.appendChild(digitDiv);
+        i++;
+    });
+}
+
 let explosionId;
-let timesMoved = 0.0, direction = 37, coinSum = 0.0;
+let timesMoved = 0.0, direction = 37, coinScore = 0.0;
 function moveOnce(keyCode, object) { 
     const currentTop = parseFloat(object.style.top);
     const currentLeft = parseFloat(object.style.left);
@@ -515,13 +533,13 @@ function moveOnce(keyCode, object) {
         }
 
         return false;
-    })
+    });
 
-    const coinSum = allBlankSpaces.length * 10;
-    scoreHolder.innerHTML = '';
-    scoreHolder.style.color = 'white';
-    const content = document.createTextNode(coinSum + '');
-    scoreHolder.appendChild(content);
+    const coinScore = allBlankSpaces.length * 10;
+    appendNewImageDigits(coinScore);
+    const labyrinth = document.querySelector('#full-labyrinth');
+    const parentElement = labyrinth.parentNode;
+    parentElement.insertBefore(scoreHolder, labyrinth);
 
     if(filteredBlankSpaces.length === 0 && areCoinCoordinates(emptyCoinSpaceTop, emptyCoinSpaceLeft)) {
         let emptyCoinSpace = document.createElement('div');

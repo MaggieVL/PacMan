@@ -19,10 +19,17 @@ body {
     background: url(./Images/spritesheet.png) 0 0;
 }
 
-#score-holder { 
+#pacman-lives-holder { 
     position: fixed;
     top: 270px;
     left: 180px;
+}
+
+#score-holder {
+    position: fixed;
+    top: 260px;
+    left: 100px;
+    width: 50px;
 }
 
 #small-pacman-full-circle {
@@ -591,4 +598,74 @@ body {
     width: 17px;
     height: 15px;
     background: url(./Images/spritesheet.png) -663px -3px;
+}
+
+#score-digit-0 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -10px 93px;
+}
+
+#score-digit-1 {
+    position: absolute;
+    width: 8.1px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -21px 93px;
+}
+
+#score-digit-2 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -30px 93px;
+}
+
+#score-digit-3 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -40.1px 93px;
+}
+
+#score-digit-4 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -50.1px 93px;
+}
+
+#score-digit-5 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -60.1px 93px;
+}
+
+#score-digit-6 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -70.1px 93px;
+}
+
+#score-digit-7 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -80.1px 93px;
+}
+
+#score-digit-8 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -90.1px 93px;
+}
+
+#score-digit-9 {
+    position: absolute;
+    width: 8.9px;
+    height: 9.2px;
+    background: url(./Images/google-sprite-sheet.png) -100.1px 93px;
 }

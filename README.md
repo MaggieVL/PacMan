@@ -25,3 +25,6 @@
     * link the chasing with the explosion and game reset at the end
   * make pacman lose lives after exploding (having been eaten)
   * make the ghosts turn blue when pacman eats a power pellet
+* Done
+  * fixed the score to be like in the game (not just the number of coins)
+  * made the score show using sprite sheet images
