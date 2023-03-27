@@ -23,3 +23,6 @@
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
   * make the ghosts turn blue when pacman eats a power pellet
+* Done
+  * made the red ghost move in the tunnels
+  * worked on getting pacman to explode when the real ghosts meet him
