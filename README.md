@@ -23,3 +23,6 @@
     * make all the ghosts chase pacman in their own way
     * link the chasing with the explosion and game reset at the end
   * make the ghosts turn blue when pacman eats a power pellet
+* Done
+  * fixed the explosion when the red ghost started moving in the tunnels, everything is fine
+  * made the red ghost skip the coins, it used to behave like pacman, now the coins aren't eaten by it and the score doesn't go up

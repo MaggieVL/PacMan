@@ -41,14 +41,26 @@ redGhost.startPosition = {
 cyanGhost.style.left = getComputedStyle(cyanGhost).left;
 cyanGhost.style.top = getComputedStyle(cyanGhost).top;
 cyanGhost.direction = 'down';
+cyanGhost.startPosition = {
+                            top: 116.5 ,
+                            left: 97
+                          }
 
 pinkGhost.style.left = getComputedStyle(pinkGhost).left;
 pinkGhost.style.top = getComputedStyle(pinkGhost).top;
 pinkGhost.direction = 'up';
+pinkGhost.startPosition = {
+                            top: 116.5,
+                            left: 112.7     
+                          }
 
 orangeGhost.style.left = getComputedStyle(orangeGhost).left;
 orangeGhost.style.top = getComputedStyle(orangeGhost).top;
 orangeGhost.direction = 'down';
+orangeGhost.startPosition = {
+                                top: 116.5,
+                                left: 128.5
+                            }
 
 exampleOrangeGhost.style.left = getComputedStyle(exampleOrangeGhost).left;
 exampleOrangeGhost.style.top = getComputedStyle(exampleOrangeGhost).top;
@@ -476,19 +488,26 @@ function appendNewImageDigits(number) {
 }
 
 function charactersOverlap(object1, object2) {
-    const object1CenterX = object1.style.top + 7.5;
-    const object1CenterY = object1.style.left + 7.5;
-    const object2Y = parseFloat(object2.style.top);
-    const object2X = parseFloat(object2.style.left);
+    const object1Top = parseFloat(object1.style.top);
+    const object1Left = parseFloat(object1.style.left);
+    const object2Top = parseFloat(object2.style.top);
+    const object2Left = parseFloat(object2.style.left);
 
-    if(object1CenterX === (object2X + 7.5) && object1CenterY === (object2Y + 15) 
-        || object1CenterX === object2X && object1CenterY === (object2Y + 7.5)
-        || object1CenterX === (object2X + 7.5) && object1CenterY === object2Y
-        || object1CenterX === (object2X + 15) && object1CenterY === (object2Y + 7.5)) {
+    if(object1Top == object2Top && object1Left - 10 <= object2Left <= object1Left + 10
+        && object1Left == object2Left && object1Top - 10 <= object2Top <= object1Top + 10) {
             return true;
-        } 
+    } 
 
         return false;
+}
+
+function areEqualCharacters(obj1, obj2) {
+    if(obj1.startPosition.top == obj2.startPosition.top 
+        && obj1.startPosition.left == obj2.startPosition.left) {
+            return true;
+    }
+
+    return false;
 }
 
 let explosionId;
@@ -502,6 +521,7 @@ function moveOnce(keyCode, object) {
     // pacman explosion
     if(charactersOverlap(pacman, redGhost) || charactersOverlap(pacman, cyanGhost)
         || charactersOverlap(pacman, pinkGhost) || charactersOverlap(pacman, orangeGhost)) {
+            console.log('overlap if');
 
             clearInterval(redGhostDirectionId);
             clearInterval(redGhostId);
@@ -524,8 +544,8 @@ function moveOnce(keyCode, object) {
                     allPacmanLives[allPacmanLives.length - 1].remove();
                 }
 
-                redGhostId = setInterval(moveOnce, 20, number, redGhost);
-                redGhostDirectionId = setInterval(switchFrames, 200, number, redGhost, redGhostIds);
+                redGhostId = setInterval(moveOnce, 20, 38, redGhost);
+                redGhostDirectionId = setInterval(switchFrames, 200, 38, redGhost, redGhostIds);
 
                 cyanGhostFramesId = setInterval(switchCageGhostFrames, 200, cyanGhost, cyanGhostIds);
                 pinkGhostFramesId = setInterval(switchCageGhostFrames, 200, pinkGhost, pinkGhostIds);
@@ -541,8 +561,10 @@ function moveOnce(keyCode, object) {
             }, 2000);
     }
 
-    // coin counting
     const k = 0.5;
+    if(areEqualCharacters(pacman, object)) {
+
+    // coin counting
     if(keyCode == direction) {
         timesMoved += k;
     } else {
@@ -578,6 +600,7 @@ function moveOnce(keyCode, object) {
         parentElement.insertBefore(emptyCoinSpace, monsterExample);
     }
 
+    // eat a power pellet
     let currentPelletCoords = arePowerPelletCoordinates(emptyCoinSpaceTop, emptyCoinSpaceLeft, emptyBlueSpaces)
     if(currentPelletCoords) {
         const newZIndex = 5;
@@ -598,6 +621,7 @@ function moveOnce(keyCode, object) {
         }
     }
 
+}
     setLineToPossiblyGetOnIfAny(object, currentTop, currentLeft);
     currentLineIsVertical = isVerticalLine(object.currentLine);
 
@@ -790,7 +814,7 @@ function moveRedGhost() {
     redGhostDirectionId = setInterval(switchFrames, 200, number, redGhost, redGhostIds);
 }
 
-setInterval(moveRedGhost, 1000)
+setInterval(moveRedGhost, 4000)
 
 function moveGhostUpAndDown(ghost) {
     if(parseFloat(ghost.style.top) === 112.5) {

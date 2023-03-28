@@ -34,7 +34,7 @@ body {
 
 #small-pacman-full-circle {
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 112.5px;
     width: 15px;
@@ -44,17 +44,17 @@ body {
 
 #small-pacman-turned-right-mouth-wide-open {
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
-    width: 12px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -456px 0;
 }
 
 #small-pacman-turned-right-mouth-slightly-open {
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 15px;
@@ -64,27 +64,27 @@ body {
 
 #small-pacman-turned-left-mouth-wide-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
-    width: 16px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -456px -16px;
 }
 
 #small-pacman-turned-left-mouth-slightly-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
-    width: 16px;
+    width: 15px;
     height: 15px;
     background: url(./Images/spritesheet.png) -472px -16px;
 }
 
 #small-pacman-turned-upside-down-mouth-wide-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 15px;
@@ -94,7 +94,7 @@ body {
 
 #small-pacman-turned-upside-down-mouth-slightly-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 15px;
@@ -104,7 +104,7 @@ body {
 
 #small-pacman-turned-upright-mouth-wide-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 15px;
@@ -114,7 +114,7 @@ body {
 
 #small-pacman-turned-upright-mouth-slightly-open { 
     position: absolute;
-    z-index: 10;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 15px;
@@ -400,16 +400,6 @@ body {
     background: url(./Images/spritesheet.png) -568.3px -80.7px;
 }
 
-#orange-monster-for-explosion-example {
-    position: absolute;
-    z-index: 5;
-    top: 12.5px;
-    left: 12.5px;
-    width: 15px;
-    height: 15px;
-    background: url(./Images/spritesheet.png) -456.3px -112.7px;
-}
-
 #orange-monster-looking-to-the-right-1 { 
     position: absolute;
     z-index: 20;
@@ -492,7 +482,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-1 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -502,7 +492,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-2 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -512,7 +502,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-3 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -522,7 +512,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-4 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -532,7 +522,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-5 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -542,7 +532,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-6 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -552,7 +542,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-7 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -562,7 +552,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-8 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -572,7 +562,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-9 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -582,7 +572,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-10 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
@@ -592,7 +582,7 @@ body {
 
 #small-pacman-exploding-turned-upside-down-mouth-open-11 {
     position: absolute;
-    z-index: 20;
+    z-index: 50;
     top: 188.5px;
     left: 113px;
     width: 17px;
