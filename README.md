@@ -1,4 +1,4 @@
-# 23th March 2023
+# 29th March 2023
 
 * https://dahoum.wales/the-pacman-as-a-nursery-32ba07b282b1 `ml`
 * Mantra
@@ -19,10 +19,5 @@
   * find 3 docs for html, css, js - book time in the gantt - read them 3 times - every day i should have progress and should read some docs
 * Homework
   * make the ghosts recognise the walls (all without the red one)
-  * make the red ghost chase Pacman in its own way - directly
-    * make all the ghosts chase pacman in their own way
-    * link the chasing with the explosion and game reset at the end
+  * make all the ghosts chase pacman in their own way
   * make the ghosts turn blue when pacman eats a power pellet
-* Done
-  * fixed the explosion when the red ghost started moving in the tunnels, everything is fine
-  * made the red ghost skip the coins, it used to behave like pacman, now the coins aren't eaten by it and the score doesn't go up
