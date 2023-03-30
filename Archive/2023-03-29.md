@@ -21,3 +21,5 @@
   * make the ghosts recognise the walls (all without the red one)
   * make all the ghosts chase pacman in their own way
   * make the ghosts turn blue when pacman eats a power pellet
+* Done
+  * worked on the algorithm for the movement of the red ghost - the chasing of pacman
